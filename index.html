@@ -1,0 +1,2138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perfect Pointe — School of Dance · Covina, CA</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-deep: #0a1f3d;
+    --navy:      #1a3a6e;
+    --blue:      #2d5fa8;
+    --blue-soft: #6a93c8;
+    --sky:       #d8e5f3;
+    --mist:      #d8e0ec;
+    --pearl:     #e2e5ea;
+
+    --champagne: #c9a96a;
+    --gold-soft: #e6d5b0;
+
+    --ink:       #2c3e58;
+    --slate:     #52647c;
+    --slate-soft:#8294ac;
+
+    --serif: "Cormorant Garamond", "Georgia", serif;
+    --sans:  "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--pearl);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  /* ---------- LOGO ---------- */
+  .logo-mark {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0;
+  }
+  .logo-img {
+    height: 260px;
+    width: auto;
+    display: block;
+  }
+  /* Nav logo → constrained height + brand blue on light bg */
+  .nav .logo-img {
+    height: 70px;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(44%) saturate(1246%) hue-rotate(190deg) brightness(100%) contrast(91%);
+  }
+  .footer .logo-img { height: 52px; }
+  footer .logo-img { width: 340px; max-width: 100%; height: auto; }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 10px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(226, 229, 234, 0.92);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(45, 95, 168, 0.08);
+    transition: padding 0.3s ease;
+  }
+  .nav__menu { display: flex; gap: 36px; align-items: center; list-style: none; }
+  .nav__menu a {
+    font-family: var(--serif);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.25s;
+    position: relative;
+  }
+
+  /* ---------- HAMBURGER + MOBILE NAV ---------- */
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px; height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav__hamburger span {
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+  .nav__mobile {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 150;
+    background: rgba(226, 229, 234, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+  .nav__mobile.open { display: flex; }
+  .nav__mobile-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    font-size: 28px; color: var(--ink);
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav__mobile-close:hover { opacity: 1; }
+  .nav__mobile-links {
+    list-style: none;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 6px;
+    margin-bottom: 36px;
+  }
+  .nav__mobile-links a {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+  .nav__mobile-links a:hover { color: var(--blue); }
+  .nav__mobile-cta {
+    background: var(--navy-deep);
+    color: var(--pearl) !important;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-family: var(--serif) !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav__mobile-cta:hover { background: var(--blue) !important; }
+  .nav__menu a:hover, .nav__menu a.active { color: var(--blue); }
+  .nav__menu a::after {
+    content: ''; position: absolute; bottom: -6px; left: 0;
+    width: 0; height: 1px; background: var(--blue);
+    transition: width 0.3s ease;
+  }
+  .nav__menu a:hover::after, .nav__menu a.active::after { width: 100%; }
+  .nav__cta {
+    background: var(--navy-deep);
+    color: var(--pearl);
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.3s;
+    font-weight: 400;
+    font-family: var(--serif);
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav__cta:hover {
+    background: var(--blue);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(45, 95, 168, 0.25);
+  }
+  .nav__cta::after { display: none; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: auto;
+    padding: 136px 44px 56px;
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 32px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -20%; left: -10%;
+    width: 70%; height: 90%;
+    background: radial-gradient(ellipse, rgba(106, 147, 200, 0.15), transparent 60%);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -10%; right: -10%;
+    width: 50%; height: 60%;
+    background: radial-gradient(circle, rgba(201, 169, 106, 0.1), transparent 60%);
+    pointer-events: none;
+  }
+  .hero__content { position: relative; z-index: 1; }
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background: rgba(45, 95, 168, 0.08);
+    border-radius: 100px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
+    font-weight: 500;
+  }
+  .hero__eyebrow-dot {
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+  .hero__title {
+    font-family: var(--serif);
+    font-size: clamp(52px, 7vw, 108px);
+    line-height: 0.92;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    margin-bottom: 22px;
+    color: var(--navy-deep);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.35s forwards;
+  }
+  .hero__title .wordmark {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero__title .wordmark__name {
+    display: block;
+  }
+  .hero__title .wordmark__rule {
+    display: block;
+    width: 2.4em;
+    height: 1.5px;
+    background: var(--gold-soft);
+    margin: 0.22em 0;
+    border: none;
+    opacity: 0.9;
+  }
+  .hero__title .wordmark__sub {
+    display: block;
+    font-size: 0.28em;
+    font-weight: 500;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-family: var(--sans);
+  }
+  .hero__lede {
+    font-family: var(--serif);
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--slate);
+    max-width: 500px;
+    margin-bottom: 28px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+  .hero__ctas {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.65s forwards;
+  }
+  /* Hero buttons: smaller so all three sit on one line */
+  .hero__content .hero__ctas { flex-wrap: nowrap; gap: 12px; }
+  .hero__content .hero__ctas .btn {
+    padding: 14px 22px; font-size: 15px; gap: 8px; white-space: nowrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 32px;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+    font-family: var(--serif);
+    letter-spacing: 0.02em;
+  }
+  .btn--primary {
+    background: var(--navy-deep);
+    color: var(--pearl);
+    box-shadow: 0 8px 24px rgba(10, 31, 61, 0.2);
+  }
+  .btn--primary:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(45, 95, 168, 0.3);
+  }
+  .btn--ghost {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    color: var(--navy-deep);
+    border: 1px solid rgba(45, 95, 168, 0.2);
+  }
+  .btn--ghost:hover {
+    background: var(--mist);
+    border-color: var(--blue);
+  }
+  .btn .arrow { transition: transform 0.3s; }
+  .btn:hover .arrow { transform: translateX(4px); }
+  .hero__meta {
+    margin-top: 40px;
+    display: flex; gap: 48px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+  .hero__meta-item { position: relative; }
+  .hero__meta-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -28px; top: 4px; bottom: 4px;
+    width: 1px;
+    background: rgba(45, 95, 168, 0.15);
+  }
+  .hero__meta-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--navy-deep);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .hero__meta-num em { font-style: italic; color: var(--blue); }
+  .hero__meta-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    margin-top: 8px;
+    font-weight: 500;
+  }
+  .hero__visual {
+    position: relative;
+    height: 82vh;
+    min-height: 600px;
+    max-height: 820px;
+    opacity: 0;
+    animation: fadeIn 1.2s ease 0.4s forwards;
+  }
+  /* Wrapper hugs the right edge and is sized to the photo's own rendered
+     width, so the badge/chip below can reliably spill past its left edge
+     (into the space a second photo used to fill) at any viewport size. */
+  .hero__photo-wrap {
+    position: relative;
+    height: 100%;
+    width: fit-content;
+    margin-left: auto;
+  }
+  .hero__card {
+    position: relative;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(10, 31, 61, 0.18);
+  }
+  /* Main portrait — frame locked to the image's exact aspect ratio (820 × 1213)
+     so the photo fills the frame perfectly at any browser size. The frame scales
+     up and down with the viewport; the image inside never stretches or crops. */
+  .hero__card--main {
+    aspect-ratio: 820 / 1213;
+    max-width: 100%;
+    background: #d6d5d3;
+  }
+  /* Hero photos: fill the frame fully — because each frame's aspect-ratio matches
+     its image, object-fit: cover never has to crop. Resizing the browser changes
+     the frame's size but not its shape, so the image stays composed identically. */
+  .hero__photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  /* Trust badge — floats off the photo's top-left edge, filling the space a
+     second photo used to occupy with a credibility stat instead. */
+  .hero__badge {
+    position: absolute;
+    top: 32px; left: -110px;
+    z-index: 2;
+    display: flex; align-items: center; gap: 12px;
+    background: var(--navy-deep);
+    color: var(--pearl);
+    padding: 14px 20px;
+    border-radius: 14px;
+    box-shadow: 0 24px 50px rgba(10, 31, 61, 0.28);
+  }
+  .hero__badge-icon {
+    font-size: 18px;
+    color: var(--gold-soft);
+  }
+  .hero__badge-num {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .hero__badge-num em { font-style: italic; color: var(--gold-soft); }
+  .hero__badge-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+    opacity: 0.85;
+    margin-top: 2px;
+    font-weight: 500;
+  }
+  /* Review chip — floats off the photo's bottom-left edge, mirroring the badge. */
+  .hero__chip {
+    position: absolute;
+    bottom: 32px; left: -140px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 20px 24px;
+    max-width: 220px;
+    border-radius: 12px;
+    box-shadow: 0 24px 50px rgba(10, 31, 61, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+  }
+  .hero__chip-stars {
+    color: var(--champagne);
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .hero__chip-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--navy-deep);
+  }
+  .hero__chip-author {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    font-weight: 500;
+  }
+
+  /* ---------- PHOTO SLOT (placeholder) ---------- */
+  .photo-slot {
+    position: relative;
+    background: linear-gradient(135deg, var(--sky), var(--blue-soft));
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy-deep);
+    text-align: center;
+    border: 1px dashed rgba(10, 31, 61, 0.18);
+    min-height: 200px;
+  }
+  .photo-slot::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.5), transparent 60%);
+    pointer-events: none;
+  }
+  .photo-slot--dark {
+    background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+    color: var(--gold-soft);
+    border-color: rgba(255,255,255,0.15);
+  }
+  .photo-slot--gold {
+    background: linear-gradient(135deg, var(--gold-soft), var(--champagne));
+    color: var(--navy-deep);
+  }
+  .photo-slot__inner { position: relative; z-index: 1; padding: 16px; }
+  .photo-slot__icon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+  .photo-slot__label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    font-weight: 500;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee {
+    background: var(--navy-deep);
+    color: var(--pearl);
+    padding: 18px 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee::before, .marquee::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .marquee::before { left: 0; background: linear-gradient(to right, var(--navy-deep), transparent); }
+  .marquee::after { right: 0; background: linear-gradient(to left, var(--navy-deep), transparent); }
+  .marquee__track {
+    display: flex; gap: 56px;
+    white-space: nowrap;
+    animation: scroll 50s linear infinite;
+    width: max-content;
+  }
+  .marquee__item {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+  .marquee__dot {
+    color: var(--champagne);
+    font-size: 12px;
+    align-self: center;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section { padding: 80px 56px; position: relative; }
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: inline-flex; align-items: center; gap: 14px;
+    font-weight: 500;
+  }
+  .section-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--blue); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(34px, 4.4vw, 60px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--navy-deep);
+  }
+  .section-title em { font-style: normal; color: inherit; }
+
+  /* ---------- WELCOME — text + vertical photo column ---------- */
+  .welcome {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 64px;
+    align-items: start;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .welcome__visual {
+    position: sticky; top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: 240px 360px;
+    gap: 12px;
+  }
+  /* class1 panoramic — spans full width */
+  .welcome__visual-frame:first-child {
+    grid-column: 1 / -1;
+  }
+  .welcome__visual-frame {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(10, 31, 61, 0.12);
+  }
+  /* Default: object-fit cover for landscape images — stable for landscape frames */
+  .welcome__visual-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  /* Panoramic (class1) — anchor slightly below center to show action */
+  .welcome__visual-frame:first-child img {
+    object-position: center 40%;
+  }
+  /* Barre portrait (class3) — cover fill, anchor left so barre/dancers stay in frame */
+  .welcome__visual-frame:nth-child(2) img {
+    object-position: center center;
+  }
+  .welcome__visual-badge {
+    position: absolute;
+    top: 18px; right: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    padding: 8px 14px;
+    border-radius: 100px;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--navy-deep);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+    z-index: 2;
+  }
+  .welcome__body p {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-top: 18px;
+    font-weight: 300;
+    max-width: 560px;
+  }
+  .welcome__body p.lead {
+    font-size: 22px;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-top: 22px;
+  }
+  .welcome__signature {
+    margin-top: 28px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    color: var(--blue);
+    font-weight: 400;
+  }
+  .welcome__signature-name {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    font-weight: 500;
+  }
+
+  /* ---------- PHOTO SHOWCASE — rotating + vertical-column duo ---------- */
+  /* ---------- PHOTOSHOOT GALLERY ---------- */
+  .section-break {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--champagne), transparent);
+    margin: 0 auto;
+  }
+
+  .photoshoot-gallery {
+    padding: 80px 56px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .photoshoot-gallery--tight {
+    padding-bottom: 24px;
+  }
+  /* Row 1: 2 landscape images side by side */
+  .gallery-landscape-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: 320px;
+    margin-bottom: 10px;
+  }
+  /* Row 2: 4 portrait images — staggered, even frames get black cap to align tops */
+  .gallery-portrait-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    height: 500px;
+    align-items: stretch;
+  }
+  .gallery-portrait-row .gallery-frame {
+    height: 100%;
+  }
+  /* Even frames: black cap at top so all 4 tops align visually */
+  .gallery-portrait-row .gallery-frame:nth-child(even) {
+    padding-top: 40px;
+    background: #0d0d0d;
+    box-sizing: border-box;
+  }
+  .gallery-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(10, 31, 61, 0.09);
+  }
+  .gallery-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .gallery-frame:hover img { transform: scale(1.04); }
+
+  /* ---------- DISCIPLINES ---------- */
+  .disciplines {
+    background: var(--navy-deep);
+    color: var(--pearl);
+    overflow: hidden;
+    position: relative;
+  }
+  .disciplines::before {
+    content: '';
+    position: absolute;
+    top: -30%; right: -20%;
+    width: 60%; height: 80%;
+    background: radial-gradient(circle, rgba(45, 95, 168, 0.4), transparent 60%);
+    pointer-events: none;
+  }
+  .disciplines .section-eyebrow { color: var(--champagne); }
+  .disciplines .section-eyebrow::before { background: var(--champagne); }
+  .disciplines .section-title { color: var(--pearl); }
+  .disciplines .section-title em { color: var(--blue-soft); }
+  .disciplines__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: end;
+    margin-bottom: 48px;
+    position: relative;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .disciplines__intro {
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--sky);
+    opacity: 0.9;
+    font-weight: 300;
+  }
+  .disciplines__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .discipline {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 28px 24px;
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .discipline::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 0;
+    background: linear-gradient(135deg, rgba(45, 95, 168, 0.5), transparent);
+    transition: height 0.4s ease;
+  }
+  .discipline:hover {
+    background: rgba(45, 95, 168, 0.15);
+    border-color: rgba(106, 147, 200, 0.3);
+    transform: translateY(-4px);
+  }
+  .discipline:hover::before { height: 100%; }
+  .discipline > * { position: relative; z-index: 1; }
+  .discipline__num {
+    font-family: var(--serif);
+    font-size: 12px;
+    font-style: italic;
+    color: var(--champagne);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .discipline__name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--pearl);
+  }
+  .discipline__name em { font-style: normal; color: inherit; }
+  .discipline__desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--sky);
+    opacity: 0.75;
+    margin-bottom: 18px;
+  }
+  .discipline__ages {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    border: 1px solid rgba(201, 169, 106, 0.3);
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .discipline__ages::before {
+    content: '';
+    width: 5px; height: 5px;
+    background: var(--champagne);
+    border-radius: 50%;
+  }
+
+  /* ---------- TRUST / STATS ---------- */
+  .trust {
+    background: var(--pearl);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .trust--tight {
+    padding-top: 32px;
+  }
+  .trust::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 400px;
+    background: radial-gradient(ellipse, rgba(45, 95, 168, 0.08), transparent 70%);
+    pointer-events: none;
+  }
+  .trust > * { position: relative; }
+  .trust .section-eyebrow { margin: 0 auto 24px; }
+  .trust__title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 16px;
+    color: var(--navy-deep);
+    letter-spacing: -0.025em;
+  }
+  .trust__title em { font-style: normal; color: inherit; }
+  .trust__sub {
+    font-family: var(--serif);
+    font-size: 18px;
+    color: var(--slate);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+    font-weight: 300;
+  }
+  .trust__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto 48px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(45, 95, 168, 0.15);
+    border-bottom: 1px solid rgba(45, 95, 168, 0.15);
+  }
+  .trust__headline {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr) minmax(180px, 1fr);
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .trust__photo {
+    aspect-ratio: 3 / 4;
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(10, 31, 61, 0.12);
+  }
+  .trust__photo .photo-slot {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+  .trust__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+  .trust__photo--left img {
+    transform: scale(1.10) translateY(5%);
+    transform-origin: center center;
+  }
+  .trust__photo--right img {
+    transform: scale(1.05) translateY(-2.5%);
+    transform-origin: center center;
+  }
+  .trust__headline-text {
+    text-align: center;
+  }
+  .trust__headline-text .trust__title {
+    margin-bottom: 16px;
+  }
+  .trust__headline-text .trust__sub {
+    margin: 0 auto;
+  }
+  .stat__num {
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--navy-deep);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.03em;
+  }
+  .stat__num em { font-style: normal; color: inherit; font-size: 0.65em; font-weight: 300; vertical-align: super; line-height: 0; }
+  .stat__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--slate);
+    font-weight: 500;
+  }
+
+  /* ---------- TESTIMONIALS — w/ rotating side photo ---------- */
+  .testimonials {
+    background: var(--mist);
+    overflow: hidden;
+    padding-top: 40px;
+  }
+  .testimonials__layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 48px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .testimonials__photo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+  .testimonials__photo {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(10, 31, 61, 0.1);
+  }
+  .testimonials__photo .photo-rotator {
+    height: 100%;
+    box-shadow: none;
+  }
+  /* ---------- PHOTO ROTATOR / CAROUSEL ---------- */
+  .photo-rotator {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+  .photo-rotator__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .photo-rotator__slide.is-active {
+    opacity: 1;
+  }
+  .photo-rotator__slide .photo-slot {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    min-height: 0;
+  }
+  /* Invisible clickable edge zones — click left/right edge to advance */
+  .photo-rotator__arrow {
+    position: absolute; top: 0; bottom: 0;
+    width: 30%;
+    border: none; padding: 0; cursor: pointer;
+    background: transparent;
+    z-index: 3;
+  }
+  .photo-rotator__arrow--prev { left: 0; }
+  .photo-rotator__arrow--next { right: 0; }
+  .photo-rotator__arrow span { display: none; }
+  .photo-rotator__dots {
+    position: absolute;
+    bottom: 16px;
+    left: 0; right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 4;
+  }
+  .photo-rotator__dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 1px 4px rgba(10, 31, 61, 0.25);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .photo-rotator__dot.is-active {
+    background: var(--pearl);
+    transform: scale(1.2);
+  }
+  .testimonials__header {
+    margin-bottom: 18px;
+  }
+  .testimonials__header--inline {
+    display: flex;
+    align-items: baseline;
+    gap: 36px;
+    max-width: 1400px;
+    margin: 0 auto 36px;
+    flex-wrap: wrap;
+  }
+  .testimonials__header--inline .section-eyebrow {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .testimonials__header--inline .section-title {
+    font-size: clamp(44px, 5.6vw, 72px);
+    line-height: 1;
+    margin: 0;
+  }
+  .testimonials__content {
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    max-height: 480px;
+  }
+  .testimonials__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+  }
+  .testimonials__grid .testimonial {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+  .testimonials__grid .testimonial__stars {
+    margin-bottom: 8px;
+  }
+  .testimonials__grid .testimonial__text {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .testimonials__grid .testimonial__author {
+    padding-top: 10px;
+    border-top: 1px solid rgba(45, 95, 168, 0.1);
+  }
+  .testimonials__grid .testimonial__name {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .testimonial {
+    background: white;
+    padding: 24px 28px;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(45, 95, 168, 0.08);
+    box-shadow: 0 4px 16px rgba(10, 31, 61, 0.04);
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+  .testimonial:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(10, 31, 61, 0.1);
+    border-color: rgba(45, 95, 168, 0.2);
+  }
+  .testimonial__stars {
+    color: var(--champagne);
+    font-size: 14px;
+    margin-bottom: 14px;
+    letter-spacing: 2px;
+  }
+  .testimonial__text {
+    font-family: var(--serif);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+  .testimonial__author {
+    display: flex; align-items: center; gap: 14px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(45, 95, 168, 0.1);
+  }
+  .testimonial__avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue-soft), var(--navy));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    color: var(--pearl);
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .testimonial__name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy-deep);
+  }
+  .testimonial__role {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    margin-top: 3px;
+    font-weight: 500;
+  }
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
+    color: var(--pearl);
+    text-align: center;
+    padding: 90px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(201, 169, 106, 0.18), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(106, 147, 200, 0.25), transparent 50%);
+  }
+  .cta-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+  }
+  .cta-banner__content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .cta-banner__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 28px;
+    padding: 8px 18px;
+    background: rgba(201, 169, 106, 0.12);
+    border: 1px solid rgba(201, 169, 106, 0.25);
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .cta-banner__title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4.8vw, 64px);
+    line-height: 1.05;
+    font-weight: 300;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+  }
+  .cta-banner__title em { font-style: normal; color: inherit; }
+  .cta-banner__text {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: var(--sky);
+    font-weight: 300;
+  }
+  .cta-banner .btn--primary { background: var(--pearl); color: var(--navy-deep); }
+  .cta-banner .btn--primary:hover { background: var(--gold-soft); color: var(--navy-deep); }
+  .cta-banner .btn--ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--pearl);
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  .cta-banner .btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--pearl);
+  }
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10, 31, 61, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none; align-items: center; justify-content: center;
+    z-index: 1000; padding: 24px;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .modal-overlay.open { display: flex; opacity: 1; }
+  .modal {
+    background: var(--pearl);
+    max-width: 560px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+    padding: 56px 48px; border-radius: 16px;
+    position: relative; transform: translateY(20px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+  .modal__close {
+    position: absolute; top: 20px; right: 20px;
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid rgba(45, 95, 168, 0.2);
+    border-radius: 50%; cursor: pointer;
+    font-size: 18px; color: var(--navy-deep);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s; font-family: var(--sans);
+  }
+  .modal__close:hover { background: var(--navy-deep); color: var(--pearl); transform: rotate(90deg); }
+  .modal__eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 16px; padding: 6px 14px;
+    background: rgba(45, 95, 168, 0.08);
+    border-radius: 100px; font-weight: 500;
+  }
+  .modal__title {
+    font-family: var(--serif);
+    font-size: 44px; font-weight: 300;
+    line-height: 1.05; margin-bottom: 16px;
+    color: var(--navy-deep); letter-spacing: -0.025em;
+  }
+  .modal__title em { font-style: normal; color: inherit; }
+  .modal__sub {
+    font-family: var(--serif);
+    font-size: 18px; color: var(--slate);
+    margin-bottom: 32px; font-weight: 300; line-height: 1.5;
+  }
+  .modal__class-card {
+    background: white; padding: 20px 24px; border-radius: 12px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(45, 95, 168, 0.12);
+    border-left: 3px solid var(--blue);
+    box-shadow: 0 4px 12px rgba(10, 31, 61, 0.04);
+  }
+  .modal__class-name {
+    font-family: var(--serif); font-size: 20px; font-weight: 500;
+    margin-bottom: 4px; color: var(--navy-deep);
+  }
+  .modal__class-meta { font-size: 13px; color: var(--slate); }
+  .form-row { margin-bottom: 20px; }
+  .form-row--two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-label {
+    display: block; font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--slate-soft);
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; background: white;
+    border: 1px solid rgba(45, 95, 168, 0.15);
+    padding: 14px 16px; font-size: 15px; color: var(--ink);
+    font-family: var(--sans); border-radius: 8px;
+    transition: all 0.25s; font-weight: 400;
+  }
+  .form-textarea { min-height: 90px; resize: vertical; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none; border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(45, 95, 168, 0.1);
+  }
+  .form-submit {
+    width: 100%; background: var(--navy-deep); color: var(--pearl);
+    padding: 18px; font-size: 13px; letter-spacing: 0.04em;
+    border: none; cursor: pointer; font-family: var(--sans);
+    font-weight: 500; border-radius: 100px;
+    transition: all 0.3s; margin-top: 12px;
+  }
+  .form-submit:hover {
+    background: var(--blue); transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(45, 95, 168, 0.3);
+  }
+  .form-fineprint {
+    text-align: center; font-size: 13px; color: var(--slate-soft);
+    margin-top: 16px; font-style: italic; font-family: var(--serif);
+  }
+  .success { text-align: center; padding: 24px 0; }
+  .success__check {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    color: var(--pearl); margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 42px;
+    animation: pop 0.5s ease;
+    box-shadow: 0 12px 32px rgba(45, 95, 168, 0.3);
+  }
+  @keyframes pop { 0% { transform: scale(0); } 60% { transform: scale(1.1); } 100% { transform: scale(1); } }
+  .success__title {
+    font-family: var(--serif); font-size: 40px; font-weight: 300;
+    margin-bottom: 12px; color: var(--navy-deep); letter-spacing: -0.025em;
+  }
+  .success__title em { font-style: normal; color: inherit; }
+  .success__text {
+    font-family: var(--serif); font-size: 18px; color: var(--slate);
+    line-height: 1.55; margin-bottom: 28px; font-weight: 300;
+  }
+  @media (max-width: 968px) {
+    .modal { padding: 40px 28px; }
+    .modal__title { font-size: 32px; }
+    .form-row--two { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--navy-deep);
+    color: var(--sky);
+    padding: 96px 56px 40px;
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--champagne), transparent);
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    max-width: 1280px;
+    margin: 0 auto 64px;
+  }
+  .footer__tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--sky);
+    opacity: 0.7;
+    max-width: 320px;
+    line-height: 1.55;
+    margin-top: 24px;
+    font-weight: 300;
+  }
+  .footer__col h4 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .footer__col ul { list-style: none; }
+  .footer__col li { margin-bottom: 14px; }
+  .footer__col a, .footer__col li {
+    font-family: var(--serif);
+    color: var(--sky);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.25s;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  .footer__col a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer__bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(216, 229, 243, 0.08);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--sky);
+    opacity: 0.55;
+    letter-spacing: 0.02em;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  /* The hero's two-column composition is tuned precisely for full desktop
+     width — the badge/chip offsets are fixed px values. Rather than let that
+     composition get squeezed and shift as the window narrows, it jumps to
+     the stacked mobile layout early (1100px), well before the general
+     968px breakpoint, so it's always either "full desktop" or "stacked" —
+     never caught in between. */
+  @media (max-width: 1100px) {
+    .hero {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .hero__visual { height: auto; min-height: 0; }
+    .hero__photo-wrap { width: 100%; margin-left: 0; }
+    .hero__card--main {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 820 / 1213;
+      max-width: 100%;
+    }
+    .hero__badge { top: 16px; left: 16px; padding: 10px 14px; gap: 8px; }
+    .hero__badge-icon { font-size: 15px; }
+    .hero__badge-num { font-size: 18px; }
+    .hero__badge-label { font-size: 9px; }
+    .hero__chip { bottom: 16px; left: 16px; right: auto; max-width: 160px; padding: 12px 14px; }
+    .hero__chip-stars { font-size: 11px; margin-bottom: 5px; }
+    .hero__chip-text { font-size: 12px; line-height: 1.35; }
+    .hero__chip-author { font-size: 9px; margin-top: 6px; }
+  }
+
+  @media (max-width: 968px) {
+    .nav { padding: 14px 20px; }
+    .nav .logo-img { height: 46px; }
+    .footer .logo-img { height: 40px; }
+    footer .logo-img { width: 245px; }
+    .nav__menu { display: none; }
+    .nav__hamburger { display: flex; }
+    .nav__cta { display: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 116px 20px 40px;
+      gap: 36px;
+    }
+    /* Hero CTAs on mobile: placement on its own line, register + schedule share a line */
+    .hero__content .hero__ctas { flex-wrap: wrap; gap: 10px; }
+    .hero__content .hero__ctas .btn {
+      flex: 1 1 calc(50% - 5px);
+      justify-content: center;
+      padding: 13px 14px; font-size: 14px;
+    }
+    .hero__content .hero__ctas .btn:first-child { flex: 1 1 100%; }
+    section { padding: 56px 20px; }
+    .welcome { grid-template-columns: 1fr; gap: 32px; }
+    .welcome__visual { position: relative; top: 0; grid-template-rows: 180px 260px; }
+    .photoshoot-gallery { padding: 40px 20px; }
+    .gallery-landscape-row { height: 200px; }
+    /* Fix ps5 contain on mobile — just cover, no black bars */
+    .gallery-landscape-row .gallery-frame:nth-child(2) img { object-fit: cover; background: none; }
+    /* Portrait row: 2-col grid, all frames same height, reset desktop stagger */
+    .gallery-portrait-row { grid-template-columns: 1fr 1fr; height: auto; align-items: stretch; }
+    .gallery-portrait-row .gallery-frame { height: 280px; }
+    .gallery-portrait-row .gallery-frame:nth-child(even) {
+      padding-top: 0;
+      background: none;
+      margin-top: 0;
+      height: 280px;
+    }
+    .disciplines__header { grid-template-columns: 1fr; gap: 24px; margin-bottom: 32px; }
+    .disciplines__grid { grid-template-columns: 1fr; }
+    .testimonials__layout { grid-template-columns: 1fr; gap: 24px; }
+    .testimonials__photo-wrap { height: auto; }
+    .testimonials__photo { position: relative; top: 0; max-width: 320px; margin: 0 auto; aspect-ratio: 1 / 1; height: auto; }
+    .testimonials__content { height: auto; max-height: none; }
+    .testimonials__grid .testimonial { flex: 0 1 auto; }
+    .trust__stats { grid-template-columns: repeat(2, 1fr); gap: 28px; padding: 32px 0; }
+    .trust__headline { grid-template-columns: 1fr; gap: 24px; }
+    .trust__photo { max-width: 240px; margin: 0 auto; }
+    .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .hero__meta { flex-wrap: wrap; gap: 24px; }
+    .hero__meta-item:not(:last-child)::after { display: none; }
+    .cta-banner { padding: 64px 20px; }
+    footer { padding: 64px 24px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="logo-mark">
+    <img src="logo.png" alt="Perfect Pointe Dance" class="logo-img">
+  </a>
+  <ul class="nav__menu">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/about-us">About Us</a></li>
+    <li><a href="/competition">Competition Team</a></li>
+    <li><a href="/nutcracker">Nutcracker</a></li>
+    <li><a href="/schedule">Schedule</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav__cta">
+    Schedule a Placement Class
+    <span>→</span>
+  </a>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav__mobile" id="mobileNav">
+  <button class="nav__mobile-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+  <ul class="nav__mobile-links">
+    <li><a href="/" onclick="closeMobileNav()">Home</a></li>
+    <li><a href="/about-us" onclick="closeMobileNav()">About Us</a></li>
+    <li><a href="/competition" onclick="closeMobileNav()">Competition Team</a></li>
+    <li><a href="/nutcracker" onclick="closeMobileNav()">Nutcracker</a></li>
+    <li><a href="/schedule" onclick="closeMobileNav()">Schedule</a></li>
+    <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav__mobile-cta" onclick="closeMobileNav()">Schedule a Placement Class →</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero__content">
+    <div class="hero__eyebrow">
+      <span class="hero__eyebrow-dot"></span>
+      San Gabriel Valley · Est. 2010
+    </div>
+    <h1 class="hero__title">
+      <span class="wordmark">
+        <span class="wordmark__name">Perfect Pointe</span>
+        <span class="wordmark__rule"></span>
+        <span class="wordmark__sub">Dance</span>
+      </span>
+    </h1>
+    <p class="hero__lede">
+      For sixteen years, Covina's families have trusted Perfect Pointe to shape confident, capable dancers — from first plié to the nationals stage.
+    </p>
+    <div class="hero__ctas">
+      <a href="#contact" class="btn btn--primary">
+        Contact us for placement
+        <span class="arrow">→</span>
+      </a>
+      <a href="https://app.akadadance.com/customer/login?c=1&schoolId=AK236302J" target="_blank" rel="noopener" class="btn btn--primary">
+        Register Here
+        <span class="arrow">→</span>
+      </a>
+      <a href="/schedule" class="btn btn--ghost">
+        View Class Schedule
+      </a>
+    </div>
+    <div class="hero__meta">
+      <div class="hero__meta-item">
+        <div class="hero__meta-num">16<em>+</em></div>
+        <div class="hero__meta-label">Years Teaching</div>
+      </div>
+      <div class="hero__meta-item">
+        <div class="hero__meta-num">500<em>+</em></div>
+        <div class="hero__meta-label">Dancers Trained</div>
+      </div>
+      <div class="hero__meta-item">
+        <div class="hero__meta-num">2<em>x</em></div>
+        <div class="hero__meta-label">National Champions</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__visual">
+    <div class="hero__photo-wrap">
+      <div class="hero__card hero__card--main">
+        <img src="images/hero-dancer.jpg" alt="Perfect Pointe dancer on pointe in blue costume" class="hero__photo hero__photo--main">
+      </div>
+      <div class="hero__badge">
+        <span class="hero__badge-icon">★</span>
+        <div>
+          <div class="hero__badge-num">4.9<em>★</em></div>
+          <div class="hero__badge-label">Parent Rating</div>
+        </div>
+      </div>
+      <div class="hero__chip">
+        <div class="hero__chip-stars">★★★★★</div>
+        <div class="hero__chip-text">
+          "Both my girls have grown into confident, beautiful dancers here."
+          <span class="hero__chip-author">— Maria L., Parent</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee__track">
+    <span class="marquee__item">Classical Ballet</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Pointe</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Contemporary</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Jazz</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Tap</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Hip-Hop</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Lyrical</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Modern</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Pom</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Acro</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Adult Classes</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Petite Pointers</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Classical Ballet</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Pointe</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Contemporary</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Jazz</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Tap</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Hip-Hop</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Lyrical</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Modern</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Pom</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Acro</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Adult Classes</span><span class="marquee__dot">●</span>
+    <span class="marquee__item">Petite Pointers</span><span class="marquee__dot">●</span>
+  </div>
+</div>
+
+<!-- WELCOME — text + vertical photo column -->
+<section id="welcome">
+  <div class="welcome">
+    <div class="welcome__visual">
+      <!-- class1: wide panoramic, spans full width -->
+      <div class="welcome__visual-frame">
+        <img src="images/class1.jpg?v=2" alt="Perfect Pointe class in session">
+        <div class="welcome__visual-badge">Est. 2010</div>
+      </div>
+      <!-- class3: portrait, barre work — left cell -->
+      <div class="welcome__visual-frame">
+        <img src="images/class3.jpg?v=2" alt="Instructor working with student at the barre">
+      </div>
+      <!-- class2: landscape, floor stretching — right cell -->
+      <div class="welcome__visual-frame">
+        <img src="images/class2.jpg?v=2" alt="Students stretching in class">
+      </div>
+    </div>
+    <div class="welcome__body">
+      <div class="section-eyebrow">A Letter from the Studio</div>
+      <h2 class="section-title">More than steps —<br>we teach <em>young people</em><br>how to stand tall.</h2>
+      <p class="lead">Perfect Pointe began in a small Covina studio with a simple but steadfast belief: that strong classical technique and joyful expression belong together. Our roots are grounded in the discipline and artistry of ballet — a foundation that continues to shape every dancer who walks through our doors.</p>
+      <p>Over the years, that vision has grown into a thriving community. Today, we offer comprehensive dance programs across all disciplines for students ages three through adult, welcoming both recreational and competitive dancers.</p>
+      <p>With a passionate and highly trained faculty, we are committed not only to developing strong, versatile dancers, but to mentoring confident, expressive individuals. Whether your child is here for an hour a week or twenty, our promise is the same: they will be seen, taught with care, and given room to grow.</p>
+      <p>Because what they gain here goes beyond technique: discipline, friendship, and a lasting belief in themselves.</p>
+      <div class="welcome__signature">
+        Belle Maturo
+        <span class="welcome__signature-name">Founder & Artistic Director</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-break"></div>
+
+<!-- DISCIPLINES -->
+<section id="disciplines" class="disciplines">
+  <div class="disciplines__header">
+    <div>
+      <div class="section-eyebrow">Programs of Study</div>
+      <h2 class="section-title">A curriculum<br>built on tradition.</h2>
+    </div>
+    <p class="disciplines__intro">
+      Our programs follow the American Ballet Theatre National Training Curriculum — the same framework that trains professional dancers worldwide — adapted for every age, level, and ambition.
+    </p>
+  </div>
+
+  <div class="disciplines__grid">
+    <div class="discipline">
+      <div class="discipline__num">— 01</div>
+      <h3 class="discipline__name">Petite <em>Pointers</em></h3>
+      <p class="discipline__desc">A 45-minute introduction to ballet for our youngest dancers. We focus on rhythm, expression, and the joy of music.</p>
+      <span class="discipline__ages">Ages 3 – 5</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 02</div>
+      <h3 class="discipline__name">Classical <em>Ballet</em></h3>
+      <p class="discipline__desc">Pre-Primary through Level 5 of the ABT National Training Curriculum. Anatomy, alignment, and artistry — taught the way professional dancers learn it.</p>
+      <span class="discipline__ages">Ages 6+</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 03</div>
+      <h3 class="discipline__name"><em>Pointe</em></h3>
+      <p class="discipline__desc">The moment every ballerina dreams of — dancing en pointe. Our program builds strength, precision, and confidence through safe, progressive training rooted in classical technique.</p>
+      <span class="discipline__ages">Ages 11+ · By placement</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 04</div>
+      <h3 class="discipline__name">Jazz, Tap, &amp; <em>Hip-Hop</em></h3>
+      <p class="discipline__desc">Energy, rhythm, and personality. Our commercial styles build versatile dancers who can hold their own in any audition room.</p>
+      <span class="discipline__ages">Ages 6+</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 05</div>
+      <h3 class="discipline__name">Contemporary/Modern &amp; <em>Lyrical</em></h3>
+      <p class="discipline__desc">Where technique meets storytelling. Classes that develop emotional range, musicality, and the freedom to move from the inside out.</p>
+      <span class="discipline__ages">Ages 6+</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 06</div>
+      <h3 class="discipline__name">Adult <em>Classes</em></h3>
+      <p class="discipline__desc">Rediscover the joy of dance — at any age. Our adult ballet and tap classes offer a welcoming, energizing space to build technique, stay active, and move with confidence.</p>
+      <span class="discipline__ages">Ages 18+</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 07</div>
+      <h3 class="discipline__name">Competition <em>Team</em></h3>
+      <p class="discipline__desc">By audition only, our Competition Team is designed for dedicated dancers ready to train, perform, and excel at a higher level.</p>
+      <span class="discipline__ages">By audition only</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 08</div>
+      <h3 class="discipline__name">Annual <em>Nutcracker</em></h3>
+      <p class="discipline__desc">A studio tradition. Every December our dancers stage a full production of The Nutcracker — a chance to perform classical repertoire onstage.</p>
+      <span class="discipline__ages">All Ages</span>
+    </div>
+    <div class="discipline">
+      <div class="discipline__num">— 09</div>
+      <h3 class="discipline__name">Annual <em>Recital</em></h3>
+      <p class="discipline__desc">Every spring, our entire studio family takes the stage. From Petite Pointers to our senior dancers, the recital is a joyful celebration of everything each student has worked toward all year.</p>
+      <span class="discipline__ages">All Ages</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- TRUST / STATS -->
+<section class="trust trust--tight">
+  <div class="trust__stats">
+    <div class="stat">
+      <div class="stat__num">500<em>+</em></div>
+      <div class="stat__label">Dancers Trained</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">2x</div>
+      <div class="stat__label">National Champions</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">8</div>
+      <div class="stat__label">Annual Nutcrackers</div>
+    </div>
+    <div class="stat">
+      <div class="stat__num">4.9<em>★</em></div>
+      <div class="stat__label">Parent Rating</div>
+    </div>
+  </div>
+  <div class="trust__headline">
+    <div class="trust__photo trust__photo--left">
+      <img src="images/reese.jpg" alt="Reese, Perfect Pointe dancer" style="object-position: center 30%;">
+    </div>
+    <div class="trust__headline-text">
+      <h2 class="trust__title"><em>Sixteen</em> seasons.<br>One studio family.</h2>
+      <p class="trust__sub">A small studio with serious results — and the receipts to prove it.</p>
+    </div>
+    <div class="trust__photo trust__photo--right">
+      <img src="images/brielle.jpg" alt="Brielle, Perfect Pointe dancer" style="object-position: center 70%;">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — sticky photo on the left, stories on the right -->
+<section id="testimonials" class="testimonials">
+  <div class="testimonials__header testimonials__header--inline">
+    <div class="section-eyebrow">From Our Families</div>
+    <h2 class="section-title">In their <em>own words</em>.</h2>
+  </div>
+  <div class="testimonials__layout">
+    <div class="testimonials__photo-wrap">
+    <div class="testimonials__photo">
+      <div class="photo-rotator" id="testimonialRotator">
+        <div class="photo-rotator__slide is-active">
+          <img src="images/friends.jpg" alt="Friends at Perfect Pointe" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div class="photo-rotator__slide">
+          <img src="images/trio.jpg" alt="Perfect Pointe dancers" style="width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block;">
+        </div>
+        <div class="photo-rotator__slide">
+          <img src="images/friends2.jpg" alt="Dancers backstage at Perfect Pointe" style="width:100%;height:100%;object-fit:cover;object-position:center 100%;display:block;">
+        </div>
+        <div class="photo-rotator__slide">
+          <img src="images/ps5.jpg" alt="Perfect Pointe dancers" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+        </div>
+        <div class="photo-rotator__slide">
+          <img src="images/miniteam.jpg" alt="Perfect Pointe dancers" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+        </div>
+        <button type="button" class="photo-rotator__arrow photo-rotator__arrow--prev" aria-label="Previous photo">
+          <span>‹</span>
+        </button>
+        <button type="button" class="photo-rotator__arrow photo-rotator__arrow--next" aria-label="Next photo">
+          <span>›</span>
+        </button>
+        <div class="photo-rotator__dots">
+          <span class="photo-rotator__dot is-active" data-index="0"></span>
+          <span class="photo-rotator__dot" data-index="1"></span>
+          <span class="photo-rotator__dot" data-index="2"></span>
+          <span class="photo-rotator__dot" data-index="3"></span>
+          <span class="photo-rotator__dot" data-index="4"></span>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="testimonials__content">
+      <div class="testimonials__grid">
+        <a class="testimonial" href="https://www.yelp.com/biz/perfect-pointe-school-of-dance-covina-3" target="_blank" rel="noopener" aria-label="Read our reviews on Yelp">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">I am a proud American grandma, and this studio welcomes my granddaughter with the finest, most patriotic community spirit you could ever ask for. The teachers display true American values by working hard to teach these kids discipline, respect, and beautiful dance routines.</p>
+          <div class="testimonial__author">
+            <div class="testimonial__name">Lisa Avalos</div>
+          </div>
+        </a>
+        <a class="testimonial" href="https://www.yelp.com/biz/perfect-pointe-school-of-dance-covina-3" target="_blank" rel="noopener" aria-label="Read our reviews on Yelp">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">I love dancing at this studio! The teachers are supportive, the training is excellent, and I've grown so much as a dancer. It's such a positive and welcoming environment, and I always look forward to class. A special thank you to Ms. Stephanie for being such a wonderful mentor. Her encouragement and guidance have meant so much to me throughout my journey.
+
+</p>
+          <div class="testimonial__author">
+            <div class="testimonial__name">Sophia A.</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:36px;">
+    <a href="https://www.yelp.com/biz/perfect-pointe-school-of-dance-covina-3" target="_blank" rel="noopener" class="btn btn--primary">
+      Check Us Out on Yelp
+      <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <div class="cta-banner__content">
+    <div class="cta-banner__eyebrow">★ Find the Right Fit</div>
+    <h2 class="cta-banner__title">Contact us for a <em>placement class</em>.</h2>
+    <p class="cta-banner__text">
+      Every dancer is different. A placement class lets our teachers meet your dancer, watch them move, and recommend the level and style that fits — so they start exactly where they belong.
+    </p>
+    <div class="hero__ctas" style="justify-content:center;">
+      <button onclick="openModal()" class="btn btn--primary">
+        Contact for Placement
+        <span class="arrow">→</span>
+      </button>
+      <a href="https://app.akadadance.com/customer/login?c=1&schoolId=AK236302J" target="_blank" rel="noopener" class="btn btn--primary">
+        Register Here
+        <span class="arrow">→</span>
+      </a>
+      <a href="tel:6264042219" class="btn btn--ghost">
+        Call (626) 404-2219
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEMENT MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="modal__close" onclick="closeModal()">×</button>
+    <div id="modalContent">
+      <div class="modal__eyebrow">★ Find the Right Fit</div>
+      <h2 class="modal__title">Contact us for a <em>placement class</em>.</h2>
+      <p class="modal__sub">Tell us a little about your dancer and we'll be in touch to schedule a placement class. Our teachers will recommend the level and style that fits best.</p>
+      <div class="modal__class-card">
+        <div class="modal__class-name">Any class — we'll help you choose</div>
+        <div class="modal__class-meta">Tell us about your dancer and we'll recommend the best placement.</div>
+      </div>
+      <form id="trialForm" onsubmit="submitTrial(event)">
+        <input type="hidden" name="source_page" value="Home page">
+        <input type="hidden" name="form_type" value="placement">
+        <input type="hidden" name="_subject" value="New Placement Class Request — Perfect Pointe">
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label>Website<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-row form-row--two">
+          <div>
+            <label class="form-label">Parent Name</label>
+            <input class="form-input" name="parent_name" type="text" required placeholder="Jane Doe">
+          </div>
+          <div>
+            <label class="form-label">Phone</label>
+            <input class="form-input" name="phone" type="tel" required placeholder="(626) 555-0123">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Email</label>
+          <input class="form-input" name="email" type="email" required placeholder="jane@email.com">
+        </div>
+        <div class="form-row form-row--two">
+          <div>
+            <label class="form-label">Dancer's Name</label>
+            <input class="form-input" name="dancer_name" type="text" required placeholder="Lily">
+          </div>
+          <div>
+            <label class="form-label">Dancer's Age</label>
+            <select class="form-select" name="dancer_age" required>
+              <option value="">Select age</option>
+              <option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10</option><option>11</option><option>12</option>
+              <option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option>
+              <option>Adult</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Prior Dance Experience</label>
+          <select class="form-select" name="experience">
+            <option>Brand new — first class ever</option>
+            <option>A little — informal or short-term</option>
+            <option>Yes — already trained somewhere else</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Anything we should know?</label>
+          <textarea class="form-textarea" name="notes" placeholder="Style of interest, scheduling notes, etc."></textarea>
+        </div>
+        <button class="form-submit" type="submit">Request a Placement Class →</button>
+        <div class="form-fineprint">We'll call within one business day.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer__grid">
+    <div>
+      <a href="/" class="logo-mark">
+        <img src="logo.png" alt="Perfect Pointe Dance" class="logo-img">
+      </a>
+      <p class="footer__tag">San Gabriel Valley's premier school of dance, training Covina's dancers since 2010.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Visit</h4>
+      <ul>
+        <li>1034 N. Citrus Ave</li>
+        <li>Covina, CA 91722</li>
+        <li><a href="tel:6264042219">(626) 404-2219</a></li>
+        <li><a href="mailto:info@perfectpointedance.com">info@perfectpointedance.com</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/competition">Competition Team</a></li>
+        <li><a href="/nutcracker">Nutcracker</a></li>
+        <li><a href="/schedule">Schedule</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://instagram.com/perfectpointedance" target="_blank" rel="noopener">Instagram @perfectpointedance</a></li>
+        <li><a href="https://www.facebook.com/people/Perfect-Pointe-School-of-Dance-Perfect-Pointe-Performing-Arts-Center/100030903052337/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Perfect Pointe School of Dance</span>
+    <span>Crafted with care in Covina, CA</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.padding = '14px 56px';
+    } else {
+      nav.style.padding = '20px 56px';
+    }
+  });
+
+  // Mobile nav
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('navHamburger').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+
+  // Placement modal
+  function openModal() {
+    const modal = document.getElementById('modal');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  async function submitTrial(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('submit.php', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (!(data.success === 'true' || data.success === true)) throw new Error(data.message || 'Send failed');
+
+      document.getElementById('modalContent').innerHTML = `
+        <div class="success">
+          <div class="success__check">✓</div>
+          <h2 class="success__title">Request <em>received</em>.</h2>
+          <p class="success__text">Thanks — we'll reach out within one business day to schedule your placement class. Welcome to the Perfect Pointe family.</p>
+          <button class="form-submit" onclick="closeModal()">Done</button>
+        </div>
+      `;
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+      alert("Sorry — something went wrong sending your request. Please call us at (626) 404-2219 or email info@perfectpointedance.com and we'll get you scheduled.");
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Testimonials photo rotator (click sides to navigate)
+  (function () {
+    const rotator = document.getElementById('testimonialRotator');
+    if (!rotator) return;
+    const slides = Array.from(rotator.querySelectorAll('.photo-rotator__slide'));
+    const dots = Array.from(rotator.querySelectorAll('.photo-rotator__dot'));
+    let current = 0;
+    let timer;
+
+    function show(index) {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => slide.classList.toggle('is-active', i === current));
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === current));
+    }
+
+    function next() { show(current + 1); }
+    function prev() { show(current - 1); }
+
+    function startAutoplay() {
+      clearInterval(timer);
+      timer = setInterval(next, 6000);
+    }
+
+    rotator.querySelector('.photo-rotator__arrow--prev').addEventListener('click', () => {
+      prev();
+      startAutoplay();
+    });
+    rotator.querySelector('.photo-rotator__arrow--next').addEventListener('click', () => {
+      next();
+      startAutoplay();
+    });
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        show(i);
+        startAutoplay();
+      });
+    });
+
+    startAutoplay();
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Us — Perfect Pointe School of Dance · Covina, CA</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-deep: #0a1f3d;
+    --navy:      #1a3a6e;
+    --blue:      #2d5fa8;
+    --blue-soft: #6a93c8;
+    --sky:       #d8e5f3;
+    --mist:      #d8e0ec;
+    --pearl:     #e2e5ea;
+
+    --champagne: #c9a96a;
+    --gold-soft: #e6d5b0;
+
+    --ink:       #2c3e58;
+    --slate:     #52647c;
+    --slate-soft:#8294ac;
+
+    --serif: "Cormorant Garamond", "Georgia", serif;
+    --sans:  "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--pearl);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  /* ---------- LOGO ---------- */
+  .logo-mark {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 0;
+  }
+  .logo-img {
+    height: 260px;
+    width: auto;
+    display: block;
+  }
+  .nav .logo-img {
+    height: 70px;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(44%) saturate(1246%) hue-rotate(190deg) brightness(100%) contrast(91%);
+  }
+  .footer .logo-img { height: 52px; }
+  footer .logo-img { width: 340px; max-width: 100%; height: auto; }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 10px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(226, 229, 234, 0.92);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(45, 95, 168, 0.08);
+    transition: padding 0.3s ease;
+  }
+  .nav__menu { display: flex; gap: 36px; align-items: center; list-style: none; }
+  .nav__menu a {
+    font-family: var(--serif);
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.25s;
+    position: relative;
+  }
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px; height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav__hamburger span {
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+  .nav__mobile {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 150;
+    background: rgba(226, 229, 234, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+  .nav__mobile.open { display: flex; }
+  .nav__mobile-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    font-size: 28px; color: var(--ink);
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav__mobile-close:hover { opacity: 1; }
+  .nav__mobile-links {
+    list-style: none;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 6px;
+    margin-bottom: 36px;
+  }
+  .nav__mobile-links a {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+  .nav__mobile-links a:hover { color: var(--blue); }
+  .nav__mobile-cta {
+    background: var(--navy-deep);
+    color: var(--pearl) !important;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-family: var(--serif) !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .nav__mobile-cta:hover { background: var(--blue) !important; }
+  .nav__menu a:hover, .nav__menu a.active { color: var(--blue); }
+  .nav__menu a::after {
+    content: ''; position: absolute; bottom: -6px; left: 0;
+    width: 0; height: 1px; background: var(--blue);
+    transition: width 0.3s ease;
+  }
+  .nav__menu a:hover::after, .nav__menu a.active::after { width: 100%; }
+  .nav__cta {
+    background: var(--navy-deep);
+    color: var(--pearl);
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.3s;
+    font-weight: 400;
+    font-family: var(--serif);
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav__cta:hover {
+    background: var(--blue);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(45, 95, 168, 0.25);
+  }
+  .nav__cta::after { display: none; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 18px 32px;
+    font-size: 17px;
+    text-decoration: none;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    font-family: var(--serif);
+  }
+  .btn--primary {
+    background: var(--navy-deep);
+    color: var(--pearl);
+    box-shadow: 0 8px 24px rgba(10, 31, 61, 0.2);
+  }
+  .btn--primary:hover {
+    background: var(--blue);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(45, 95, 168, 0.3);
+  }
+  .btn--ghost {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    color: var(--navy-deep);
+    border: 1px solid rgba(45, 95, 168, 0.2);
+  }
+  .btn--ghost:hover {
+    background: var(--mist);
+    border-color: var(--blue);
+  }
+  .btn .arrow { transition: transform 0.3s; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ---------- PHOTO SLOT ---------- */
+  .photo-slot {
+    position: relative;
+    background: linear-gradient(135deg, var(--sky), var(--blue-soft));
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy-deep);
+    text-align: center;
+    border: 1px dashed rgba(10, 31, 61, 0.18);
+    min-height: 200px;
+  }
+  .photo-slot::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.5), transparent 60%);
+    pointer-events: none;
+  }
+  .photo-slot--dark {
+    background: linear-gradient(135deg, var(--navy), var(--navy-deep));
+    color: var(--gold-soft);
+    border-color: rgba(255,255,255,0.15);
+  }
+  .photo-slot--gold {
+    background: linear-gradient(135deg, var(--gold-soft), var(--champagne));
+    color: var(--navy-deep);
+  }
+  .photo-slot__inner { position: relative; z-index: 1; padding: 16px; }
+  .photo-slot__icon {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 6px;
+    opacity: 0.7;
+  }
+  .photo-slot__label {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    font-weight: 500;
+  }
+
+  /* ---------- STAFF PHOTOS ---------- */
+  .teacher-card__photo {
+    aspect-ratio: 3 / 4;
+  }
+  .teacher-card__photo img,
+  .desk-card__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .desk-card__photo {
+    aspect-ratio: 3 / 4;
+  }
+  .owner__photo {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+  .owner__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  /* Text-only desk card (no photo) */
+  .desk-card--text-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 40px;
+    text-align: center;
+  }
+  .desk-card--text-only .desk-card__body {
+    padding: 0;
+    max-width: 360px;
+  }
+  /* Front desk 2-up row */
+  .front-desk__row-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  /* Denise row — centered single card */
+  .front-desk__row-one {
+    display: flex;
+    justify-content: center;
+  }
+  .front-desk__row-one .desk-card {
+    width: 100%;
+  }
+
+  /* ---------- SECTION SHARED ---------- */
+  section { padding: 80px 40px; position: relative; }
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 16px;
+    display: inline-flex; align-items: center; gap: 14px;
+    font-weight: 500;
+  }
+  .section-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--blue); }
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(34px, 4.4vw, 60px);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--navy-deep);
+  }
+  .section-title em { font-style: italic; color: var(--blue); }
+
+  /* ---------- PAGE HERO ---------- */
+  .page-hero {
+    padding: 136px 56px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--pearl) 0%, var(--mist) 100%);
+  }
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 1000px; height: 700px;
+    background: radial-gradient(ellipse, rgba(106, 147, 200, 0.2), transparent 60%);
+    pointer-events: none;
+  }
+  .page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%; right: -10%;
+    width: 60%; height: 80%;
+    background: radial-gradient(circle, rgba(201, 169, 106, 0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .page-hero > * { position: relative; }
+  .page-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 28px;
+    padding: 8px 16px;
+    background: rgba(45, 95, 168, 0.08);
+    border-radius: 100px;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.2s forwards;
+  }
+  .page-hero__eyebrow-dot {
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+    animation: pulse 2s ease infinite;
+  }
+  .page-hero__title {
+    font-family: var(--serif);
+    font-size: clamp(56px, 7.5vw, 112px);
+    line-height: 0.98;
+    font-weight: 300;
+    letter-spacing: -0.03em;
+    color: var(--navy-deep);
+    margin-bottom: 28px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.35s forwards;
+  }
+  .page-hero__title em { font-style: italic; color: var(--blue); }
+  .page-hero__lede {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.55;
+    color: var(--slate);
+    max-width: 680px;
+    margin: 0 auto;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+
+  /* ---------- OWNER SECTION ---------- */
+  .owner {
+    background: white;
+    padding: 80px 40px;
+  }
+  .owner--alt {
+    background: var(--pearl);
+  }
+  .owner__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .owner__inner--reverse {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+  .owner__inner--reverse .owner__visual {
+    order: 2;
+  }
+  .owner__inner--reverse .owner__body {
+    order: 1;
+  }
+  .owner__visual {
+    position: sticky;
+    top: 100px;
+  }
+  .owner__photo {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 32px 80px rgba(10, 31, 61, 0.14);
+  }
+  .owner__photo .photo-slot {
+    height: 100%;
+    min-height: 0;
+    border-radius: 16px;
+  }
+  .owner__badge {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .owner__tag {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue);
+    padding: 8px 16px;
+    border: 1px solid rgba(45, 95, 168, 0.2);
+    border-radius: 100px;
+    font-weight: 500;
+    background: rgba(45, 95, 168, 0.04);
+  }
+  .owner__body {
+    padding-top: 8px;
+  }
+  .owner__name {
+    font-family: var(--serif);
+    font-size: clamp(52px, 6.5vw, 88px);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--navy-deep);
+    margin-top: 12px;
+    margin-bottom: 6px;
+  }
+  .owner__name em { font-style: italic; color: var(--blue); }
+  .owner__title {
+    font-size: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .owner__divider {
+    width: 48px;
+    height: 1px;
+    background: var(--champagne);
+    margin-bottom: 32px;
+  }
+  .owner__body p {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.65;
+    color: var(--ink);
+    margin-bottom: 18px;
+    font-weight: 300;
+    max-width: 600px;
+  }
+  .owner__body p.lead {
+    font-size: 24px;
+    color: var(--navy);
+    line-height: 1.45;
+  }
+  .owner__accolades {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .owner__accolade {
+    padding: 20px;
+    background: var(--pearl);
+    border-radius: 12px;
+    border: 1px solid rgba(45, 95, 168, 0.08);
+  }
+  .owner__accolade-num {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--navy-deep);
+    line-height: 1;
+    margin-bottom: 6px;
+    letter-spacing: -0.03em;
+  }
+  .owner__accolade-num em { font-style: italic; color: var(--blue); }
+  .owner__accolade-label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* ---------- TEACHERS SECTION ---------- */
+  .teachers {
+    background: var(--pearl);
+    padding: 80px 40px;
+  }
+  .teachers__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .teachers__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .teachers .section-eyebrow {
+    font-size: 15px;
+  }
+  .teachers .section-title {
+    font-size: clamp(44px, 5.5vw, 72px);
+  }
+  .teachers__sub {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.5;
+    color: var(--slate);
+    max-width: 560px;
+    font-weight: 300;
+  }
+  .teachers__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .teacher-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(45, 95, 168, 0.07);
+    box-shadow: 0 4px 20px rgba(10, 31, 61, 0.04);
+    transition: all 0.4s ease;
+  }
+  .teacher-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 56px rgba(10, 31, 61, 0.1);
+    border-color: rgba(45, 95, 168, 0.15);
+  }
+  .teacher-card__photo {
+    position: relative;
+    overflow: hidden;
+  }
+  .teacher-card__photo .photo-slot {
+    height: 100%;
+    min-height: 0;
+    border-radius: 0;
+    border: none;
+  }
+  .teacher-card__body {
+    padding: 16px 20px 20px;
+  }
+  .teacher-card__name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--navy-deep);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .teacher-card__name em { font-style: italic; color: var(--blue); }
+  .teacher-card__specialty {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--slate-soft);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .teacher-card__divider {
+    width: 32px;
+    height: 1px;
+    background: var(--champagne);
+    margin-bottom: 14px;
+  }
+  .teacher-card__bio {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--slate);
+    font-weight: 300;
+  }
+
+  /* ---------- FRONT DESK SECTION ---------- */
+  .front-desk {
+    background: var(--navy-deep);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .front-desk::before {
+    content: '';
+    position: absolute;
+    top: -30%; right: -15%;
+    width: 55%; height: 80%;
+    background: radial-gradient(circle, rgba(45, 95, 168, 0.35), transparent 60%);
+    pointer-events: none;
+  }
+  .front-desk::after {
+    content: '';
+    position: absolute;
+    bottom: -20%; left: -10%;
+    width: 40%; height: 60%;
+    background: radial-gradient(circle, rgba(201, 169, 106, 0.12), transparent 60%);
+    pointer-events: none;
+  }
+  .front-desk__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .front-desk__left {
+    display: flex;
+    flex-direction: column;
+  }
+  .front-desk__right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .front-desk .section-eyebrow { color: var(--champagne); }
+  .front-desk .section-eyebrow::before { background: var(--champagne); }
+  .front-desk .section-eyebrow { font-size: 16px; }
+  .front-desk .section-title { color: var(--pearl); font-size: clamp(44px, 5.5vw, 72px); }
+  .front-desk .section-title em { color: var(--blue-soft); }
+  .front-desk__sub {
+    font-family: var(--serif);
+    font-size: 23px;
+    line-height: 1.55;
+    color: var(--sky);
+    opacity: 0.85;
+    max-width: 500px;
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-weight: 300;
+  }
+  .front-desk__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .desk-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .desk-card:hover {
+    background: rgba(45, 95, 168, 0.12);
+    border-color: rgba(106, 147, 200, 0.25);
+    transform: translateY(-4px);
+  }
+  .desk-card__photo {
+    overflow: hidden;
+  }
+  .desk-card__photo .photo-slot {
+    height: 100%;
+    min-height: 0;
+    border-radius: 0;
+    border: none;
+  }
+  .desk-card__body {
+    padding: 24px 24px 28px;
+  }
+  .desk-card__name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--pearl);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .desk-card__name em { font-style: italic; color: var(--blue-soft); }
+  .desk-card__role {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+  .desk-card__divider {
+    width: 32px;
+    height: 1px;
+    background: rgba(201, 169, 106, 0.4);
+    margin-bottom: 14px;
+  }
+  .desk-card__bio {
+    font-family: var(--serif);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--sky);
+    opacity: 0.8;
+    font-weight: 300;
+  }
+
+  /* ---------- CTA BANNER ---------- */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
+    color: var(--pearl);
+    text-align: center;
+    padding: 70px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(201, 169, 106, 0.18), transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(106, 147, 200, 0.25), transparent 50%);
+  }
+  .cta-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15), transparent);
+  }
+  .cta-banner__content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .cta-banner__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin-bottom: 28px;
+    padding: 8px 18px;
+    background: rgba(201, 169, 106, 0.12);
+    border: 1px solid rgba(201, 169, 106, 0.25);
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .cta-banner__title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4.8vw, 64px);
+    line-height: 1.05;
+    font-weight: 300;
+    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+  }
+  .cta-banner__title em { font-style: italic; color: var(--gold-soft); }
+  .cta-banner__text {
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: var(--sky);
+    font-weight: 300;
+  }
+  .cta-banner .btn--primary { background: var(--pearl); color: var(--navy-deep); }
+  .cta-banner .btn--primary:hover { background: var(--gold-soft); color: var(--navy-deep); }
+  .cta-banner .btn--ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--pearl);
+    border-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  .cta-banner .btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--pearl);
+  }
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10, 31, 61, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none; align-items: center; justify-content: center;
+    z-index: 1000; padding: 24px;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .modal-overlay.open { display: flex; opacity: 1; }
+  .modal {
+    background: var(--pearl);
+    max-width: 560px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+    padding: 56px 48px; border-radius: 16px;
+    position: relative; transform: translateY(20px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+  .modal__close {
+    position: absolute; top: 20px; right: 20px;
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid rgba(45, 95, 168, 0.2);
+    border-radius: 50%; cursor: pointer;
+    font-size: 18px; color: var(--navy-deep);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s; font-family: var(--sans);
+  }
+  .modal__close:hover { background: var(--navy-deep); color: var(--pearl); transform: rotate(90deg); }
+  .modal__eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 16px; padding: 6px 14px;
+    background: rgba(45, 95, 168, 0.08);
+    border-radius: 100px; font-weight: 500;
+  }
+  .modal__title {
+    font-family: var(--serif);
+    font-size: 44px; font-weight: 300;
+    line-height: 1.05; margin-bottom: 16px;
+    color: var(--navy-deep); letter-spacing: -0.025em;
+  }
+  .modal__title em { font-style: italic; color: var(--blue); }
+  .modal__sub {
+    font-family: var(--serif);
+    font-size: 18px; color: var(--slate);
+    margin-bottom: 32px; font-weight: 300; line-height: 1.5;
+  }
+  .modal__class-card {
+    background: white; padding: 20px 24px; border-radius: 12px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(45, 95, 168, 0.12);
+    border-left: 3px solid var(--blue);
+    box-shadow: 0 4px 12px rgba(10, 31, 61, 0.04);
+  }
+  .modal__class-name {
+    font-family: var(--serif); font-size: 20px; font-weight: 500;
+    margin-bottom: 4px; color: var(--navy-deep);
+  }
+  .modal__class-meta { font-size: 13px; color: var(--slate); }
+  .form-row { margin-bottom: 20px; }
+  .form-row--two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-label {
+    display: block; font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--slate-soft);
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; background: white;
+    border: 1px solid rgba(45, 95, 168, 0.15);
+    padding: 14px 16px; font-size: 15px; color: var(--ink);
+    font-family: var(--sans); border-radius: 8px;
+    transition: all 0.25s; font-weight: 400;
+  }
+  .form-textarea { min-height: 90px; resize: vertical; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none; border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(45, 95, 168, 0.1);
+  }
+  .form-submit {
+    width: 100%; background: var(--navy-deep); color: var(--pearl);
+    padding: 18px; font-size: 13px; letter-spacing: 0.04em;
+    border: none; cursor: pointer; font-family: var(--sans);
+    font-weight: 500; border-radius: 100px;
+    transition: all 0.3s; margin-top: 12px;
+  }
+  .form-submit:hover {
+    background: var(--blue); transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(45, 95, 168, 0.3);
+  }
+  .form-fineprint {
+    text-align: center; font-size: 13px; color: var(--slate-soft);
+    margin-top: 16px; font-style: italic; font-family: var(--serif);
+  }
+  .success { text-align: center; padding: 24px 0; }
+  .success__check {
+    width: 84px; height: 84px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    color: var(--pearl); margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 42px;
+    animation: pop 0.5s ease;
+    box-shadow: 0 12px 32px rgba(45, 95, 168, 0.3);
+  }
+  @keyframes pop { 0% { transform: scale(0); } 60% { transform: scale(1.1); } 100% { transform: scale(1); } }
+  .success__title {
+    font-family: var(--serif); font-size: 40px; font-weight: 300;
+    margin-bottom: 12px; color: var(--navy-deep); letter-spacing: -0.025em;
+  }
+  .success__title em { font-style: italic; color: var(--blue); }
+  .success__text {
+    font-family: var(--serif); font-size: 18px; color: var(--slate);
+    line-height: 1.55; margin-bottom: 28px; font-weight: 300;
+  }
+  @media (max-width: 968px) {
+    .modal { padding: 40px 28px; }
+    .modal__title { font-size: 32px; }
+    .form-row--two { grid-template-columns: 1fr; }
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--navy-deep);
+    color: var(--sky);
+    padding: 96px 56px 40px;
+    position: relative;
+  }
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--champagne), transparent);
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    max-width: 1280px;
+    margin: 0 auto 64px;
+  }
+  .footer__tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--sky);
+    opacity: 0.7;
+    max-width: 320px;
+    line-height: 1.55;
+    margin-top: 24px;
+    font-weight: 300;
+  }
+  .footer__col h4 {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--champagne);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .footer__col ul { list-style: none; }
+  .footer__col li { margin-bottom: 14px; }
+  .footer__col a, .footer__col li {
+    font-family: var(--serif);
+    color: var(--sky);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.25s;
+    opacity: 0.75;
+    font-weight: 300;
+  }
+  .footer__col a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer__bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(216, 229, 243, 0.08);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--sky);
+    opacity: 0.55;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- KEYFRAMES ---------- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 968px) {
+    .nav { padding: 14px 20px; }
+    .nav .logo-img { height: 46px; }
+    .footer .logo-img { height: 40px; }
+    footer .logo-img { width: 245px; }
+    .nav__menu { display: none; }
+    .nav__hamburger { display: flex; }
+    .nav__cta { display: none; }
+
+    .page-hero { padding: 116px 20px 64px; }
+
+    section, .owner, .teachers, .front-desk { padding: 56px 20px; }
+    .cta-banner { padding: 64px 20px; }
+    footer { padding: 64px 24px 32px; }
+
+    .owner__inner { grid-template-columns: 1fr; gap: 40px; }
+    .owner__inner--reverse .owner__visual { order: 0; }
+    .owner__inner--reverse .owner__body { order: 0; }
+    .owner__visual { position: relative; top: 0; }
+    .owner__accolades { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+    .teachers__grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .front-desk__inner { grid-template-columns: 1fr; gap: 40px; }
+    .front-desk__row-two { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    .owner__accolades { grid-template-columns: 1fr 1fr; }
+    .teachers__grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="logo-mark">
+    <img src="logo.png" alt="Perfect Pointe Dance" class="logo-img">
+  </a>
+  <ul class="nav__menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about-us" class="active">About Us</a></li>
+    <li><a href="/competition">Competition Team</a></li>
+    <li><a href="/nutcracker">Nutcracker</a></li>
+    <li><a href="/schedule">Schedule</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav__cta">
+    Schedule a Placement Class
+    <span>→</span>
+  </a>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav__mobile" id="mobileNav">
+  <button class="nav__mobile-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+  <ul class="nav__mobile-links">
+    <li><a href="/" onclick="closeMobileNav()">Home</a></li>
+    <li><a href="/about-us" onclick="closeMobileNav()">About Us</a></li>
+    <li><a href="/competition" onclick="closeMobileNav()">Competition Team</a></li>
+    <li><a href="/nutcracker" onclick="closeMobileNav()">Nutcracker</a></li>
+    <li><a href="/schedule" onclick="closeMobileNav()">Schedule</a></li>
+    <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav__mobile-cta" onclick="closeMobileNav()">Schedule a Placement Class →</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero__eyebrow">
+    <span class="page-hero__eyebrow-dot"></span>
+    Est. 2010 · Covina, California
+  </div>
+  <h1 class="page-hero__title">
+    The people behind<br>every great dancer.
+  </h1>
+  <p class="page-hero__lede">
+    A team of 14 educators, each passionate about craft, technique, and the students they teach every day.
+  </p>
+</header>
+
+<!-- OWNER — CHLOÉ GROVÉ -->
+<section class="owner" id="chloe">
+  <div class="owner__inner">
+    <div class="owner__visual">
+      <div class="owner__photo">
+        <img src="images/staff/chloe.jpg" alt="Chloé Grové — Owner & Artistic Director">
+      </div>
+      <div class="owner__badge">
+      </div>
+    </div>
+
+    <div class="owner__body">
+      <div class="section-eyebrow">Meet the Owner</div>
+      <h2 class="owner__name">Chloé <em>Grové</em></h2>
+      <div class="owner__title">Owner &amp; Artistic Director</div>
+      <div class="owner__divider"></div>
+
+      <p class="lead">Ms. Chloé Grové brings to Perfect Pointe a career at the very highest levels of professional ballet — and a deep commitment to nurturing the next generation of dancers.</p>
+
+      <p>A Senior Soloist with Joburg Ballet (formerly the South African Ballet Theatre), Ms. Chloé performed numerous soloist and principal roles across a 16-year professional career. She was invited to perform with the Royal Swedish Ballet in Natalia Makarova's production of <em>La Bayadère</em>, and has shared the stage with celebrated international artists including Alina Cojocaru, Johann Kobborg, and Michaela DePrince.</p>
+
+      <p>Trained from age 4 in the RAD, Cecchetti, and Vaganova methods, Ms. Chloé worked with legendary choreographers and producers including Natalia Makarova, Maina Gielgud, Patricia Neary, and Ronald Hynd. She performed in all the great classics as well as neo-classical repertoire by George Balanchine, Kenneth MacMillan, and Choo San Goh.</p>
+
+      <p>An ABT® Certified Teacher, Ms. Chloé holds the Certificate in Ballet Teaching Studies (CBTS) with the Royal Academy of Dance and has completed the ABT® Teacher Training Intensive through Level 5 of the National Training Curriculum. She has coached numerous dancers for the prestigious Youth America Grand Prix.</p>
+
+      <p>As Owner and Artistic Director of Perfect Pointe, Ms. Chloé is honored to carry forward the exceptional foundation Belle Maturo built over 14 years — preserving the studio's reputation for world-class training and its warm, family-first culture while bringing her international professional experience to every class, every student, and every dancer's journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER — BELLE MATURO -->
+<section class="owner owner--alt" id="belle">
+  <div class="owner__inner owner__inner--reverse">
+    <div class="owner__visual">
+      <div class="owner__photo">
+        <img src="images/staff/belle.jpg" alt="Belle Maturo — Founder">
+      </div>
+      <div class="owner__badge">
+      </div>
+    </div>
+
+    <div class="owner__body">
+      <div class="section-eyebrow">Our Founder</div>
+      <h2 class="owner__name">Belle <em>Maturo</em></h2>
+      <div class="owner__title">Founder</div>
+      <div class="owner__divider"></div>
+
+      <p class="lead">Belle Maturo founded Perfect Pointe School of Dance in 2010, building it into San Gabriel Valley's premier ballet and dance school from the ground up.</p>
+
+      <p>Over 14 years, Belle propelled the studio's growth and nurtured hundreds of students through her 30-year teaching career. She has been recognized with many dance and choreography accolades nationally and internationally, and holds numerous certifications in classical ballet.</p>
+
+      <p>Belle's greatest joy has always been offering the same quality dance instruction that brought her happiness growing up in Australia — creating a safe, encouraging environment that fosters an enduring love and passion for dance. That spirit remains the heart of Perfect Pointe today.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHERS -->
+<section class="teachers" id="teachers">
+  <div class="teachers__inner">
+    <div class="teachers__header">
+      <div>
+        <div class="section-eyebrow">Our Faculty</div>
+        <h2 class="section-title">Trained to teach.<br>Passionate to inspire.</h2>
+      </div>
+      <p class="teachers__sub">Every instructor at Perfect Pointe brings professional training, genuine warmth, and a deep commitment to each dancer's growth.</p>
+    </div>
+
+    <div class="teachers__grid">
+
+      <!-- Teacher 1 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/ariana.jpg" alt="Ariana Dewing">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Ariana Dewing</h3>
+          <div class="teacher-card__specialty">Classical Ballet</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 3 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/alicia.jpg" alt="Alicia Cutaia">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Alicia Cutaia</h3>
+          <div class="teacher-card__specialty">Classical Ballet</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 4 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/natalie.jpg" alt="Natalie Gutierrez">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Natalie Gutierrez</h3>
+          <div class="teacher-card__specialty">Classical Ballet</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 5 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/stephanie.jpg" alt="Stephanie Kjos">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Stephanie Kjos</h3>
+          <div class="teacher-card__specialty">Lyrical &amp; Jazz</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 6 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/miki.jpg" alt="Miki Amen">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Miki Amen</h3>
+          <div class="teacher-card__specialty">Tap</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 7 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/grace.jpg" alt="Grace Salsido">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Grace Salsido</h3>
+          <div class="teacher-card__specialty">Jazz &amp; Contemporary</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 8 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/veronica.jpg" alt="Veronica McGuire">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Veronica McGuire</h3>
+          <div class="teacher-card__specialty">Hip Hop</div>
+
+        </div>
+      </div>
+
+      <!-- Teacher 9 -->
+      <div class="teacher-card">
+        <div class="teacher-card__photo">
+          <img src="images/staff/brielle.jpg" alt="Brielle Winfield">
+        </div>
+        <div class="teacher-card__body">
+          <h3 class="teacher-card__name">Brielle Winfield</h3>
+          <div class="teacher-card__specialty">Hip-Hop &amp; Ballet</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FRONT DESK STAFF -->
+<section class="front-desk" id="front-desk">
+  <div class="front-desk__inner">
+
+    <!-- Left: title + sub -->
+    <div class="front-desk__left">
+      <div class="section-eyebrow">Studio Support</div>
+      <h2 class="section-title">The faces at the front.</h2>
+      <p class="front-desk__sub">Our front desk team keeps everything running smoothly — from enrollment to questions, they're your first call and your biggest advocates.</p>
+    </div>
+
+    <!-- Right: staff cards -->
+    <div class="front-desk__right">
+
+      <!-- Row 1: Jennie + Maggie with photos -->
+      <div class="front-desk__row-two">
+
+        <!-- Staff 1 -->
+        <div class="desk-card">
+          <div class="desk-card__photo">
+            <img src="images/staff/jennie.jpg" alt="Jennie O'Donnell">
+          </div>
+          <div class="desk-card__body">
+            <h3 class="desk-card__name">Jennie O'Donnell</h3>
+            <div class="desk-card__role">Front Desk</div>
+          </div>
+        </div>
+
+        <!-- Staff 2 -->
+        <div class="desk-card">
+          <div class="desk-card__photo">
+            <img src="images/staff/maggie.jpg" alt="Maggie May">
+          </div>
+          <div class="desk-card__body">
+            <h3 class="desk-card__name">Maggie May</h3>
+            <div class="desk-card__role">Front Desk</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Row 2: Denise — text only, no photo -->
+      <div class="front-desk__row-one">
+        <div class="desk-card desk-card--text-only">
+          <div class="desk-card__body">
+            <h3 class="desk-card__name">Denise Baransowski</h3>
+            <div class="desk-card__role">Keyboard warrior, mystery to all</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <div class="cta-banner__content">
+    <div class="cta-banner__eyebrow">★ Find the Right Fit</div>
+    <h2 class="cta-banner__title">Contact us for a placement class.</h2>
+    <p class="cta-banner__text">
+      Every dancer is different. A placement class lets our teachers meet your dancer, watch them move, and recommend the level and style that fits — so they start exactly where they belong.
+    </p>
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <button onclick="openModal()" class="btn btn--primary">
+        Contact for Placement
+        <span class="arrow">→</span>
+      </button>
+      <a href="https://app.akadadance.com/customer/login?c=1&schoolId=AK236302J" target="_blank" rel="noopener" class="btn btn--primary">
+        Register Here
+        <span class="arrow">→</span>
+      </a>
+      <a href="tel:6264042219" class="btn btn--ghost">
+        Call (626) 404-2219
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PLACEMENT MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="modal__close" onclick="closeModal()">×</button>
+    <div id="modalContent">
+      <div class="modal__eyebrow">★ Find the Right Fit</div>
+      <h2 class="modal__title">Contact us for a placement class.</h2>
+      <p class="modal__sub">Tell us a little about your dancer and we'll be in touch to schedule a placement class. Our teachers will recommend the level and style that fits best.</p>
+      <div class="modal__class-card">
+        <div class="modal__class-name">Any class — we'll help you choose</div>
+        <div class="modal__class-meta">Tell us about your dancer and we'll recommend the best placement.</div>
+      </div>
+      <form id="trialForm" onsubmit="submitTrial(event)">
+        <input type="hidden" name="source_page" value="About Us page">
+        <input type="hidden" name="form_type" value="placement">
+        <input type="hidden" name="_subject" value="New Placement Class Request — Perfect Pointe">
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label>Website<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-row form-row--two">
+          <div>
+            <label class="form-label">Parent Name</label>
+            <input class="form-input" name="parent_name" type="text" required placeholder="Jane Doe">
+          </div>
+          <div>
+            <label class="form-label">Phone</label>
+            <input class="form-input" name="phone" type="tel" required placeholder="(626) 555-0123">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Email</label>
+          <input class="form-input" name="email" type="email" required placeholder="jane@email.com">
+        </div>
+        <div class="form-row form-row--two">
+          <div>
+            <label class="form-label">Dancer's Name</label>
+            <input class="form-input" name="dancer_name" type="text" required placeholder="Lily">
+          </div>
+          <div>
+            <label class="form-label">Dancer's Age</label>
+            <select class="form-select" name="dancer_age" required>
+              <option value="">Select age</option>
+              <option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10</option><option>11</option><option>12</option>
+              <option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option>
+              <option>Adult</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Prior Dance Experience</label>
+          <select class="form-select" name="experience">
+            <option>Brand new — first class ever</option>
+            <option>A little — informal or short-term</option>
+            <option>Yes — already trained somewhere else</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Anything we should know?</label>
+          <textarea class="form-textarea" name="notes" placeholder="Style of interest, scheduling notes, etc."></textarea>
+        </div>
+        <button class="form-submit" type="submit">Request a Placement Class →</button>
+        <div class="form-fineprint">We'll call within one business day.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer__grid">
+    <div>
+      <a href="/" class="logo-mark">
+        <img src="logo.png" alt="Perfect Pointe Dance" class="logo-img">
+      </a>
+      <p class="footer__tag">San Gabriel Valley's premier school of dance, training Covina's dancers since 2010.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Visit</h4>
+      <ul>
+        <li>1034 N. Citrus Ave</li>
+        <li>Covina, CA 91722</li>
+        <li><a href="tel:6264042219">(626) 404-2219</a></li>
+        <li><a href="mailto:info@perfectpointedance.com">info@perfectpointedance.com</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/competition">Competition Team</a></li>
+        <li><a href="/nutcracker">Nutcracker</a></li>
+        <li><a href="/schedule">Schedule</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://instagram.com/perfectpointedance" target="_blank" rel="noopener">Instagram @perfectpointedance</a></li>
+        <li><a href="https://www.facebook.com/people/Perfect-Pointe-School-of-Dance-Perfect-Pointe-Performing-Arts-Center/100030903052337/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Perfect Pointe School of Dance</span>
+    <span>Crafted with care in Covina, CA</span>
+  </div>
+</footer>
+
+<script>
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.style.padding = window.scrollY > 40 ? '14px 56px' : '20px 56px';
+  });
+
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('navHamburger').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+
+  function openModal() {
+    document.getElementById('modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  async function submitTrial(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('submit.php', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (!(data.success === 'true' || data.success === true)) throw new Error(data.message || 'Send failed');
+
+      document.getElementById('modalContent').innerHTML = `
+        <div class="success">
+          <div class="success__check">✓</div>
+          <h2 class="success__title">Request received.</h2>
+          <p class="success__text">Thanks — we'll reach out within one business day to schedule your placement class. Welcome to the Perfect Pointe family.</p>
+          <button class="form-submit" onclick="closeModal()">Done</button>
+        </div>
+      `;
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+      alert("Sorry — something went wrong sending your request. Please call us at (626) 404-2219 or email info@perfectpointedance.com and we'll get you scheduled.");
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
+
+</body>
+</html>

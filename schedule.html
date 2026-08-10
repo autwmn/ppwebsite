@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fall 2026–2027 Schedule — Perfect Pointe</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-deep: #0a1f3d;
+    --navy:      #1a3a6e;
+    --blue:      #2d5fa8;
+    --blue-soft: #6a93c8;
+    --sky:       #d8e5f3;
+    --mist:      #d8e0ec;
+    --pearl:     #e2e5ea;
+
+    --champagne: #c9a96a;
+    --gold-soft: #e6d5b0;
+
+    --ink:       #2c3e58;
+    --slate:     #52647c;
+    --slate-soft:#8294ac;
+
+    --serif: "Cormorant Garamond", "Georgia", serif;
+    --sans:  "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--pearl);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- LOGO ---------- */
+  .logo-mark { display: inline-block; text-decoration: none; line-height: 0; }
+  .logo-img { height: 260px; width: auto; display: block; }
+  /* Nav logo → constrained height + brand blue on light bg */
+  .nav .logo-img {
+    height: 70px;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(44%) saturate(1246%) hue-rotate(190deg) brightness(100%) contrast(91%);
+  }
+  .footer .logo-img { height: 52px; }
+  footer .logo-img { width: 340px; max-width: 100%; height: auto; }
+
+  /* ---------- NAV ---------- */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 10px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(226, 229, 234, 0.92);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom: 1px solid rgba(45, 95, 168, 0.08);
+    transition: padding 0.3s ease;
+  }
+  .nav__menu { display: flex; gap: 36px; align-items: center; list-style: none; }
+  .nav__menu a {
+    font-family: var(--serif);
+    font-size: 16px; letter-spacing: 0.02em;
+    color: var(--ink); text-decoration: none;
+    font-weight: 400; transition: color 0.25s; position: relative;
+  }
+
+  /* ---------- HAMBURGER + MOBILE NAV ---------- */
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px; height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav__hamburger span {
+    display: block;
+    width: 24px; height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+  .nav__mobile {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 150;
+    background: rgba(226, 229, 234, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav__mobile.open { display: flex; }
+  .nav__mobile-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; cursor: pointer;
+    font-size: 28px; color: var(--ink);
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav__mobile-close:hover { opacity: 1; }
+  .nav__mobile-links {
+    list-style: none;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 6px;
+    margin-bottom: 36px;
+  }
+  .nav__mobile-links a {
+    font-family: var(--serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+  .nav__mobile-links a:hover { color: var(--blue); }
+  .nav__mobile-cta {
+    background: var(--navy-deep);
+    color: var(--pearl) !important;
+    padding: 14px 32px;
+    border-radius: 100px;
+    font-family: var(--serif) !important;
+    font-size: 18px !important;
+    font-style: normal !important;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav__mobile-cta:hover { background: var(--blue) !important; }
+  .nav__menu a:hover, .nav__menu a.active { color: var(--blue); }
+  .nav__menu a.active::after {
+    content: ''; position: absolute; bottom: -6px; left: 0; right: 0;
+    height: 1px; background: var(--blue);
+  }
+  .nav__cta {
+    background: var(--navy-deep); color: var(--pearl);
+    padding: 12px 24px; font-size: 16px; text-decoration: none;
+    border-radius: 100px; transition: all 0.3s; font-weight: 400;
+    font-family: var(--serif); letter-spacing: 0.02em;
+    border: none; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .nav__cta:hover { background: var(--blue); transform: translateY(-1px); box-shadow: 0 12px 24px rgba(45, 95, 168, 0.25); }
+  .nav__cta::after { display: none; }
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-header {
+    padding: 136px 56px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: ''; position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 800px; height: 600px;
+    background: radial-gradient(ellipse, rgba(106, 147, 200, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .page-header > * { position: relative; }
+  .page-header__eyebrow {
+    display: inline-flex; align-items: center; gap: 12px;
+    font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--blue); margin-bottom: 28px;
+    padding: 8px 16px;
+    background: rgba(45, 95, 168, 0.08);
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .page-header__eyebrow-dot {
+    width: 6px; height: 6px; background: var(--blue);
+    border-radius: 50%; animation: pulse 2s ease infinite;
+  }
+  .page-header__title {
+    font-family: var(--serif);
+    font-size: clamp(44px, 5.6vw, 80px);
+    line-height: 1; font-weight: 300;
+    letter-spacing: -0.025em;
+    margin-bottom: 16px; color: var(--navy-deep);
+  }
+  .page-header__title em { font-style: italic; color: var(--blue); }
+  .page-header__sub {
+    font-family: var(--serif);
+    font-size: 22px; line-height: 1.55;
+    color: var(--slate);
+    max-width: 720px; margin: 0 auto;
+    font-weight: 300;
+  }
+  .page-header__dates {
+    margin-top: 16px;
+    font-size: 15px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--champagne); font-weight: 500;
+  }
+  .page-header__register {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 30px;
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
+    color: var(--pearl);
+    padding: 18px 44px; border-radius: 100px; text-decoration: none;
+    font-family: var(--serif); font-size: 20px; letter-spacing: 0.02em;
+    box-shadow: 0 8px 24px rgba(31, 58, 95, 0.25);
+    transition: all 0.3s;
+  }
+  .page-header__register:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(31, 58, 95, 0.32); }
+  .page-header__register span { transition: transform 0.3s; }
+  .page-header__register:hover span { transform: translateX(4px); }
+
+  /* ---------- PHOTO SLOT ---------- */
+  .photo-slot {
+    position: relative;
+    background: linear-gradient(135deg, var(--sky), var(--blue-soft));
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy-deep); text-align: center;
+    border: 1px dashed rgba(10, 31, 61, 0.18);
+    min-height: 200px;
+  }
+  .photo-slot::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.5), transparent 60%);
+    pointer-events: none;
+  }
+  .photo-slot--gold {
+    background: linear-gradient(135deg, var(--gold-soft), var(--champagne));
+    color: var(--navy-deep);
+  }
+  .photo-slot__inner { position: relative; z-index: 1; padding: 16px; }
+  .photo-slot__icon {
+    font-family: var(--serif); font-style: italic;
+    font-size: 28px; margin-bottom: 6px; opacity: 0.7;
+  }
+  .photo-slot__label {
+    font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; opacity: 0.65; font-weight: 500;
+  }
+
+  /* ---------- PLACEMENT BANNER ---------- */
+  .placement-banner {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
+    color: var(--pearl);
+    padding: 24px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+    margin-top: 32px;
+  }
+  .placement-banner::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 20% 50%, rgba(201, 169, 106, 0.15), transparent 40%),
+      radial-gradient(circle at 80% 50%, rgba(106, 147, 200, 0.2), transparent 50%);
+  }
+  .placement-banner > * { position: relative; }
+  .placement-banner__icon {
+    width: 36px; height: 36px;
+    background: var(--gold-soft);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); color: var(--navy-deep);
+    font-size: 18px; flex-shrink: 0;
+  }
+  .placement-banner strong {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 400;
+    color: var(--gold-soft); font-style: italic;
+  }
+  .placement-banner__btn {
+    background: var(--pearl); color: var(--navy-deep);
+    padding: 12px 22px; font-size: 15px; text-decoration: none;
+    border-radius: 100px; border: none; cursor: pointer;
+    font-weight: 400; transition: all 0.3s;
+    font-family: var(--serif); letter-spacing: 0.02em;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .placement-banner__btn:hover { background: var(--gold-soft); transform: translateY(-1px); }
+
+  /* ---------- FILTERS ---------- */
+  .filters {
+    padding: 48px 56px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .filters__header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 32px; flex-wrap: wrap; gap: 16px;
+  }
+  .filters__title {
+    font-family: var(--serif);
+    font-size: 36px; font-weight: 300;
+    color: var(--navy-deep); letter-spacing: -0.02em;
+  }
+  .filters__title em { font-style: italic; color: var(--blue); }
+  .filters__count {
+    font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--slate-soft);
+    font-weight: 500;
+  }
+  .filters__count strong { color: var(--blue); font-weight: 600; }
+  .filter-groups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    background: white;
+    padding: 36px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 95, 168, 0.08);
+    box-shadow: 0 4px 20px rgba(10, 31, 61, 0.04);
+  }
+  .filter-group__label {
+    display: block;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--slate-soft);
+    margin-bottom: 14px; font-weight: 500;
+  }
+  .filter-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .filter-pill {
+    background: var(--mist); border: 1px solid transparent;
+    color: var(--ink); padding: 9px 16px; font-size: 13px;
+    cursor: pointer; transition: all 0.25s;
+    border-radius: 100px; font-family: var(--sans);
+    font-weight: 400; user-select: none;
+  }
+  .filter-pill:hover { background: var(--sky); color: var(--blue); }
+  .filter-pill.active {
+    background: var(--navy-deep); color: var(--pearl);
+    border-color: var(--navy-deep);
+  }
+  .filter-actions {
+    margin-top: 24px;
+    display: flex; justify-content: flex-end; gap: 12px;
+  }
+  .filter-clear {
+    background: none; border: none;
+    color: var(--slate); font-size: 12px;
+    letter-spacing: 0.12em; cursor: pointer;
+    padding: 8px 12px;
+    text-decoration: underline;
+    text-decoration-color: rgba(74, 90, 115, 0.3);
+    text-underline-offset: 4px;
+    transition: color 0.25s; font-family: var(--sans);
+  }
+  .filter-clear:hover { color: var(--blue); }
+
+  /* ---------- SCHEDULE ---------- */
+  .schedule {
+    padding: 32px 56px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .schedule-day { margin-bottom: 40px; }
+  .schedule-day__header {
+    display: flex; align-items: baseline; gap: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(45, 95, 168, 0.15);
+    margin-bottom: 6px;
+  }
+  .schedule-day__name {
+    font-family: var(--serif);
+    font-size: 38px; font-weight: 300;
+    line-height: 1; color: var(--navy-deep);
+    letter-spacing: -0.025em;
+  }
+  .schedule-day__name em { font-style: italic; color: var(--blue); }
+  .schedule-day__count {
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--slate-soft);
+    font-weight: 500;
+  }
+  .class-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 220px 110px 180px;
+    align-items: center;
+    padding: 18px 12px;
+    border-bottom: 1px solid rgba(45, 95, 168, 0.06);
+    transition: all 0.25s;
+    gap: 16px; border-radius: 8px;
+  }
+  .class-row:hover {
+    background: white;
+    box-shadow: 0 8px 24px rgba(10, 31, 61, 0.06);
+    border-bottom-color: transparent;
+    padding-left: 20px; padding-right: 20px;
+  }
+  .class-row.hidden { display: none; }
+  .class-time {
+    font-family: var(--serif);
+    font-size: 18px; font-weight: 400;
+    color: var(--navy-deep); letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .class-time__sep {
+    color: var(--blue);
+    margin: 0 4px;
+    font-style: italic;
+    font-weight: 300;
+  }
+  .class-info__name {
+    font-family: var(--serif);
+    font-size: 21px; font-weight: 500;
+    margin-bottom: 4px; color: var(--navy-deep);
+    letter-spacing: -0.01em;
+  }
+  .class-info__name em { font-style: italic; color: var(--blue); }
+  .class-info__teacher {
+    font-family: var(--serif);
+    font-size: 16px; color: var(--slate);
+    letter-spacing: 0.01em;
+  }
+  .class-info__teacher::before { content: 'with '; font-style: italic; color: var(--slate-soft); }
+  .class-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--mist); color: var(--blue);
+    font-weight: 500;
+  }
+  .tag--age { background: rgba(201, 169, 106, 0.12); color: var(--champagne); }
+  .tag--full { background: rgba(179, 73, 47, 0.12); color: #b3492f; }
+  .class-studio {
+    font-family: var(--sans);
+    font-size: 12px; color: var(--slate-soft);
+    letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 500; white-space: nowrap;
+  }
+  .class-studio strong {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-style: normal;
+    display: inline;
+    letter-spacing: inherit;
+  }
+  .class-cta {
+    background: var(--navy-deep); color: var(--pearl);
+    padding: 13px 18px; font-size: 14px;
+    letter-spacing: 0.02em;
+    border: none; cursor: pointer; text-align: center;
+    transition: all 0.3s; font-family: var(--serif);
+    border-radius: 100px; font-weight: 400;
+  }
+  .class-cta:hover {
+    background: var(--blue); transform: translateY(-1px);
+    box-shadow: 0 8px 16px rgba(45, 95, 168, 0.25);
+  }
+  .class-cta--full {
+    background: var(--pearl); color: #b3492f;
+    border: 1.5px solid #b3492f;
+  }
+  .class-cta--full:hover {
+    background: #b3492f; color: var(--pearl);
+    box-shadow: 0 8px 16px rgba(179, 73, 47, 0.25);
+  }
+  .empty-state {
+    text-align: center; padding: 100px 24px; display: none;
+  }
+  .empty-state.visible { display: block; }
+  .empty-state__title {
+    font-family: var(--serif);
+    font-size: 40px; font-style: italic;
+    color: var(--blue); margin-bottom: 14px;
+    font-weight: 300; letter-spacing: -0.02em;
+  }
+  .empty-state__text {
+    font-size: 16px; color: var(--slate);
+    max-width: 480px; margin: 0 auto 32px;
+  }
+
+  /* ---------- TUITION + INFO + PHOTO ACCENT ---------- */
+  .info-band {
+    background: var(--mist);
+    padding: 64px 56px;
+  }
+  .info-band__intro {
+    max-width: 1280px;
+    margin: 0 auto 36px;
+    text-align: center;
+  }
+  .info-band__intro-text {
+    font-family: var(--serif);
+    font-size: 18px; line-height: 1.5;
+    color: var(--slate);
+    font-weight: 300;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .info-band__intro-text h2 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 300; line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--navy-deep);
+    margin-bottom: 12px;
+  }
+  .info-band__intro-text h2 em { font-style: italic; color: var(--blue); }
+  .info-band__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .info-card {
+    background: white;
+    padding: 28px 32px;
+    border-radius: 16px;
+    border: 1px solid rgba(45, 95, 168, 0.08);
+    box-shadow: 0 4px 20px rgba(10, 31, 61, 0.04);
+  }
+  .info-card h3 {
+    font-family: var(--serif);
+    font-size: 32px; font-weight: 300;
+    color: var(--navy-deep);
+    margin-bottom: 8px; letter-spacing: -0.02em;
+  }
+  .info-card h3 em { font-style: italic; color: var(--blue); }
+  .info-card__sub {
+    font-size: 12px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--slate-soft);
+    margin-bottom: 28px; font-weight: 500;
+  }
+  .tuition-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px; align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(45, 95, 168, 0.08);
+  }
+  .tuition-row:last-child { border-bottom: none; }
+  .tuition-row__label {
+    font-family: var(--serif);
+    font-size: 16px; color: var(--navy-deep);
+  }
+  .tuition-row__price {
+    font-family: var(--serif); font-weight: 500;
+    color: var(--navy-deep); font-size: 18px;
+    min-width: 64px; text-align: right;
+  }
+  .tuition-row__price--cc { color: var(--blue); }
+  .tuition-head {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--slate-soft);
+    font-weight: 500;
+    border-bottom: 1px solid rgba(45, 95, 168, 0.15);
+  }
+  .tuition-head span:nth-child(2),
+  .tuition-head span:nth-child(3) { text-align: right; min-width: 64px; }
+  .info-card ul.req-list {
+    list-style: none; padding: 0;
+  }
+  .info-card ul.req-list li {
+    padding: 10px 0 10px 22px;
+    position: relative;
+    font-family: var(--serif);
+    font-size: 18px; color: var(--ink);
+    line-height: 1.5;
+    border-bottom: 1px dashed rgba(45, 95, 168, 0.12);
+  }
+  .info-card ul.req-list li:last-child { border-bottom: none; }
+  .info-card ul.req-list li::before {
+    content: ''; position: absolute;
+    left: 0; top: 18px;
+    width: 8px; height: 8px;
+    background: var(--blue); border-radius: 50%;
+  }
+  .info-card ul.req-list li strong { color: var(--navy-deep); font-weight: 500; }
+  .tuition-group {
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--slate-soft); font-weight: 500;
+    margin: 30px 0 6px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(45, 95, 168, 0.15);
+  }
+  .tuition-row--2col { grid-template-columns: 1fr auto; }
+  .tuition-note { font-size: 13px; line-height: 1.55; color: var(--slate-soft); margin-top: 18px; }
+  .tuition-note--top { margin-top: 4px; margin-bottom: 8px; }
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10, 31, 61, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none; align-items: center; justify-content: center;
+    z-index: 1000; padding: 24px;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .modal-overlay.open { display: flex; opacity: 1; }
+  .modal {
+    background: var(--pearl);
+    max-width: 560px; width: 100%;
+    max-height: 90vh; overflow-y: auto;
+    padding: 56px 48px; border-radius: 16px;
+    position: relative; transform: translateY(20px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  }
+  .modal-overlay.open .modal { transform: translateY(0); }
+  .modal__close {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid rgba(45, 95, 168, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--navy-deep);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.25s; font-family: var(--sans);
+  }
+  .modal__close:hover {
+    background: var(--navy-deep); color: var(--pearl);
+    transform: rotate(90deg);
+  }
+  .modal__eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    background: rgba(45, 95, 168, 0.08);
+    border-radius: 100px; font-weight: 500;
+  }
+  .modal__title {
+    font-family: var(--serif);
+    font-size: 44px; font-weight: 300;
+    line-height: 1.05; margin-bottom: 16px;
+    color: var(--navy-deep); letter-spacing: -0.025em;
+  }
+  .modal__title em { font-style: italic; color: var(--blue); }
+  .modal__sub {
+    font-family: var(--serif);
+    font-size: 18px; color: var(--slate);
+    margin-bottom: 32px; font-weight: 300; line-height: 1.5;
+  }
+  .modal__class-card {
+    background: white;
+    padding: 20px 24px; border-radius: 12px;
+    margin-bottom: 32px;
+    border: 1px solid rgba(45, 95, 168, 0.12);
+    border-left: 3px solid var(--blue);
+    box-shadow: 0 4px 12px rgba(10, 31, 61, 0.04);
+  }
+  .modal__class-name {
+    font-family: var(--serif);
+    font-size: 20px; font-weight: 500;
+    margin-bottom: 4px; color: var(--navy-deep);
+  }
+  .modal__class-meta { font-size: 13px; color: var(--slate); }
+  .form-row { margin-bottom: 20px; }
+  .form-row--two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-label {
+    display: block;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--slate-soft);
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    background: white;
+    border: 1px solid rgba(45, 95, 168, 0.15);
+    padding: 14px 16px;
+    font-size: 15px; color: var(--ink);
+    font-family: var(--sans);
+    border-radius: 8px;
+    transition: all 0.25s; font-weight: 400;
+  }
+  .form-textarea { min-height: 90px; resize: vertical; }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none; border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(45, 95, 168, 0.1);
+  }
+  .form-submit {
+    width: 100%;
+    background: var(--navy-deep); color: var(--pearl);
+    padding: 18px;
+    font-size: 13px; letter-spacing: 0.04em;
+    border: none; cursor: pointer;
+    font-family: var(--sans); font-weight: 500;
+    border-radius: 100px;
+    transition: all 0.3s; margin-top: 12px;
+  }
+  .form-submit:hover {
+    background: var(--blue); transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(45, 95, 168, 0.3);
+  }
+  .form-fineprint {
+    text-align: center;
+    font-size: 13px; color: var(--slate-soft);
+    margin-top: 16px; font-style: italic; font-family: var(--serif);
+  }
+  .success { text-align: center; padding: 24px 0; }
+  .success__check {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    color: var(--pearl);
+    margin: 0 auto 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 42px;
+    animation: pop 0.5s ease;
+    box-shadow: 0 12px 32px rgba(45, 95, 168, 0.3);
+  }
+  @keyframes pop {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .success__title {
+    font-family: var(--serif);
+    font-size: 40px; font-weight: 300;
+    margin-bottom: 12px; color: var(--navy-deep);
+    letter-spacing: -0.025em;
+  }
+  .success__title em { font-style: italic; color: var(--blue); }
+  .success__text {
+    font-family: var(--serif);
+    font-size: 18px; color: var(--slate);
+    line-height: 1.55; margin-bottom: 28px; font-weight: 300;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--navy-deep); color: var(--sky);
+    padding: 96px 56px 40px;
+    position: relative;
+  }
+  footer::before {
+    content: ''; position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--champagne), transparent);
+  }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    max-width: 1280px;
+    margin: 0 auto 64px;
+  }
+  .footer__tag {
+    font-family: var(--serif); font-style: italic;
+    font-size: 17px; color: var(--sky); opacity: 0.7;
+    max-width: 320px; line-height: 1.55;
+    margin-top: 24px; font-weight: 300;
+  }
+  .footer__col h4 {
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--champagne);
+    margin-bottom: 24px; font-weight: 500;
+  }
+  .footer__col ul { list-style: none; }
+  .footer__col li { margin-bottom: 14px; }
+  .footer__col a, .footer__col li {
+    font-family: var(--serif);
+    color: var(--sky); text-decoration: none;
+    font-size: 16px; transition: color 0.25s;
+    opacity: 0.75; font-weight: 300;
+  }
+  .footer__col a:hover { color: var(--gold-soft); opacity: 1; }
+  .footer__bottom {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid rgba(216, 229, 243, 0.08);
+    display: flex; justify-content: space-between;
+    font-family: var(--serif);
+    font-size: 13px; color: var(--sky); opacity: 0.55;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  @media (max-width: 968px) {
+    .nav { padding: 14px 20px; }
+    .nav .logo-img { height: 46px; }
+    .footer .logo-img { height: 40px; }
+    footer .logo-img { width: 245px; }
+    .nav__menu { display: none; }
+    .nav__hamburger { display: flex; }
+    .nav__cta { display: none; }
+    .page-header { padding: 120px 24px 40px; }
+    .placement-banner { padding: 20px 24px; text-align: center; margin-top: 24px; }
+    .filters { padding: 56px 24px 24px; }
+    .filter-groups { grid-template-columns: 1fr; padding: 24px; gap: 20px; }
+    .schedule { padding: 24px 24px 60px; }
+    .schedule-day__name { font-size: 40px; }
+    .class-row {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 24px 16px;
+    }
+    .class-row:hover { padding: 24px 16px; }
+    .class-tags { margin-top: 4px; }
+    .class-cta { width: 100%; padding: 14px; }
+    .info-band { padding: 60px 24px; }
+    .info-band__grid { grid-template-columns: 1fr; gap: 32px; }
+    .info-card { padding: 28px; }
+    .modal { padding: 40px 28px; }
+    .modal__title { font-size: 32px; }
+    .form-row--two { grid-template-columns: 1fr; }
+    .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer__bottom { flex-direction: column; gap: 12px; text-align: center; }
+    footer { padding: 64px 24px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="logo-mark">
+    <img src="logo.png" alt="Perfect Pointe Dance" class="logo-img">
+  </a>
+  <ul class="nav__menu">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about-us">About Us</a></li>
+    <li><a href="/competition">Competition Team</a></li>
+    <li><a href="/nutcracker">Nutcracker</a></li>
+    <li><a href="/schedule" class="active">Schedule</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="nav__cta" onclick="openModal()">Contact us for a Placement Class <span>→</span></button>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV OVERLAY -->
+<div class="nav__mobile" id="mobileNav">
+  <button class="nav__mobile-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+  <ul class="nav__mobile-links">
+    <li><a href="/" onclick="closeMobileNav()">Home</a></li>
+    <li><a href="/about-us" onclick="closeMobileNav()">About Us</a></li>
+    <li><a href="/competition" onclick="closeMobileNav()">Competition Team</a></li>
+    <li><a href="/nutcracker" onclick="closeMobileNav()">Nutcracker</a></li>
+    <li><a href="/schedule" onclick="closeMobileNav()">Schedule</a></li>
+    <li><a href="/#contact" onclick="closeMobileNav()">Contact</a></li>
+  </ul>
+  <button class="nav__mobile-cta" onclick="closeMobileNav(); openModal();">Book a Placement Class →</button>
+</div>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header__eyebrow">
+    <span class="page-header__eyebrow-dot"></span>
+    Fall 2026–2027 · Full Season
+  </div>
+  <h1 class="page-header__title">Fall 2026–2027 schedule.</h1>
+  <p class="page-header__sub">
+    A full season of training in ballet, pointe, jazz, tap, hip-hop, lyrical, modern, commercial, tumbling, and team. Filter by what fits your dancer, then reach out for a placement class.
+  </p>
+  <div class="page-header__dates">August 17, 2026 – June 19, 2027</div>
+  <div style="margin-top:10px; font-size:13px; opacity:0.6; font-style:italic;">Updated July 28, 2026 · Schedule &amp; teachers subject to change</div>
+  <a href="https://app.akadadance.com/customer/login?c=1&schoolId=AK236302J" target="_blank" rel="noopener" class="page-header__register">
+    Register Here
+    <span>→</span>
+  </a>
+</header>
+
+<!-- PLACEMENT BANNER -->
+<div class="placement-banner">
+  <div class="placement-banner__icon">★</div>
+  <span><strong>Not sure where to start?</strong></span>
+  <span style="opacity:0.85;">Contact us for a placement class — we'll meet your dancer and recommend the right level.</span>
+  <button class="placement-banner__btn" onclick="openModal()">Contact for Placement →</button>
+  <a class="placement-banner__btn" href="https://app.akadadance.com/customer/login?c=1&schoolId=AK236302J" target="_blank" rel="noopener">Register Here →</a>
+</div>
+
+<!-- FILTERS -->
+<section class="filters">
+  <div class="filters__header">
+    <h2 class="filters__title">Filter by what fits.</h2>
+    <div class="filters__count"><strong id="visibleCount">—</strong> classes shown</div>
+  </div>
+
+  <div class="filter-groups">
+    <div class="filter-group">
+      <label class="filter-group__label">Discipline</label>
+      <div class="filter-pills" data-filter="discipline">
+        <button class="filter-pill active" data-value="all">All</button>
+        <button class="filter-pill" data-value="ballet">Ballet</button>
+        <button class="filter-pill" data-value="jazz">Jazz</button>
+        <button class="filter-pill" data-value="tap">Tap</button>
+        <button class="filter-pill" data-value="hiphop">Hip-Hop</button>
+        <button class="filter-pill" data-value="lyrical">Lyrical</button>
+        <button class="filter-pill" data-value="modern">Modern</button>
+        <button class="filter-pill" data-value="commercial">Commercial</button>
+        <button class="filter-pill" data-value="team">Team</button>
+        <button class="filter-pill" data-value="tumbling">Tumbling</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-group__label">Age Group</label>
+      <div class="filter-pills" data-filter="age">
+        <button class="filter-pill active" data-value="all">All Ages</button>
+        <button class="filter-pill" data-value="3-5">Ages 3–5</button>
+        <button class="filter-pill" data-value="6-8">Ages 6–8</button>
+        <button class="filter-pill" data-value="9-12">Ages 9–12</button>
+        <button class="filter-pill" data-value="13+">Teens 13+</button>
+        <button class="filter-pill" data-value="adult">Adult</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label class="filter-group__label">Day of Week</label>
+      <div class="filter-pills" data-filter="day">
+        <button class="filter-pill active" data-value="all">Any Day</button>
+        <button class="filter-pill" data-value="monday">Mon</button>
+        <button class="filter-pill" data-value="tuesday">Tue</button>
+        <button class="filter-pill" data-value="wednesday">Wed</button>
+        <button class="filter-pill" data-value="thursday">Thu</button>
+        <button class="filter-pill" data-value="friday">Fri</button>
+        <button class="filter-pill" data-value="saturday">Sat</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter-actions">
+    <button class="filter-clear" onclick="clearFilters()">Clear all filters</button>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="schedule"></section>
+
+<!-- EMPTY STATE -->
+<div class="empty-state" id="emptyState">
+  <h3 class="empty-state__title">No classes match those filters.</h3>
+  <p class="empty-state__text">Try widening your search, or contact us for a placement class and we'll help you find the right fit.</p>
+  <button class="placement-banner__btn" style="background:var(--navy-deep);color:var(--pearl);" onclick="openModal()">Contact for Placement →</button>
+</div>
+
+<!-- TUITION + REQUIREMENTS — w/ side photo -->
+<section class="info-band">
+  <div class="info-band__intro">
+    <div class="info-band__intro-text">
+      <h2>Tuition, dates &amp; policies.</h2>
+      <p>Everything you need for the 2026–2027 season — monthly tuition, payment policies, holiday closures, and key performance dates.</p>
+    </div>
+  </div>
+
+  <div class="info-band__grid">
+    <div class="info-card">
+      <h3>Tuition &amp; registration</h3>
+      <div class="info-card__sub">2026–2027 Season</div>
+      <p class="tuition-note tuition-note--top">Monthly tuition is based on a 4-week month. We do not prorate except for August. Tuition is due on the 1st; a $25 late fee applies if not paid by the 5th — no exceptions.</p>
+
+      <div class="tuition-group">Annual Registration</div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">1st Child</span><span class="tuition-row__price">$35</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">2nd Child</span><span class="tuition-row__price">$30</span></div>
+
+      <div class="tuition-group">Monthly Tuition · Primary &amp; Up</div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">45 Min – 1 Hour / Week</span><span class="tuition-row__price">$78</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">2 Hours / Week</span><span class="tuition-row__price">$140</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">3 Hours / Week</span><span class="tuition-row__price">$170</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">4 Hours / Week</span><span class="tuition-row__price">$215</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">Unlimited w/out Pointe</span><span class="tuition-row__price">$240</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">Unlimited w/ Pointe</span><span class="tuition-row__price">$260</span></div>
+
+      <div class="tuition-group">Petite Pointers &amp; Primary A w/ Mini</div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">1 Class</span><span class="tuition-row__price">$78</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">2 Classes</span><span class="tuition-row__price">$120</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">3 Classes</span><span class="tuition-row__price">$165</span></div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">4 Classes</span><span class="tuition-row__price">$200</span></div>
+
+      <div class="tuition-group">Private Lessons</div>
+      <div class="tuition-row tuition-row--2col"><span class="tuition-row__label">30 Minutes</span><span class="tuition-row__price">$45</span></div>
+
+      <p class="tuition-note">*Unlimited tuition includes multiple ballet classes and 1 class per style of the remaining classes offered.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Payment</h3>
+      <div class="info-card__sub">Billing &amp; withdrawal</div>
+      <ul class="req-list">
+        <li>Annual registration is due at sign-up.</li>
+        <li>Tuition is due the 1st of each month; the late fee is applied on the 5th — no exceptions.</li>
+        <li>All accounts must keep a credit card on file. If payment isn't received by the 15th, your card is automatically charged, including the late fee.</li>
+        <li>To withdraw, notify us in writing by the 15th of the month prior. After the 15th, you're responsible for the following month's tuition.</li>
+        <li>If a dancer drops, misses a month, then returns, the registration fee must be paid again.</li>
+      </ul>
+
+      <h3 style="margin-top:48px;">Office hours</h3>
+      <div class="info-card__sub">When we're in</div>
+      <ul class="req-list">
+        <li><strong>Monday – Friday:</strong> 4:00 – 8:00 PM</li>
+        <li><strong>Saturday:</strong> 9:00 AM – 12:00 PM</li>
+      </ul>
+
+      <h3 style="margin-top:48px;">Holidays &amp; closures</h3>
+      <div class="info-card__sub">Studio closed</div>
+      <ul class="req-list">
+        <li><strong>Labor Day</strong> — Sept 7</li>
+        <li><strong>Halloween</strong> — Oct 31</li>
+        <li><strong>Thanksgiving</strong> — Nov 23–28</li>
+        <li><strong>Christmas Break</strong> — Dec 20 – Jan 3</li>
+        <li><strong>MLK Day</strong> — Jan 18</li>
+        <li><strong>Presidents Day</strong> — Feb 15</li>
+        <li><strong>Spring Break</strong> — Apr 5–10</li>
+      </ul>
+
+      <h3 style="margin-top:48px;">Important dates</h3>
+      <div class="info-card__sub">Performances &amp; rehearsals</div>
+      <ul class="req-list">
+        <li><strong>Nutcracker Audition</strong> — Aug 23</li>
+        <li><strong>Nutcracker Mandatory Rehearsal</strong> — Nov 29</li>
+        <li><strong>Nutcracker Dress Rehearsal</strong> — Dec 18</li>
+        <li><strong>Nutcracker Performance</strong> — Dec 19</li>
+        <li><strong>Recital Dress Rehearsal</strong> — June 18</li>
+        <li><strong>Recital Performance</strong> — June 19</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal">
+    <button class="modal__close" onclick="closeModal()">×</button>
+    <div id="modalContent">
+      <div class="modal__eyebrow">★ Find the Right Fit</div>
+      <h2 class="modal__title">Contact us for a placement class.</h2>
+      <p class="modal__sub">Tell us a little about your dancer and we'll be in touch to schedule a placement class. Our teachers will recommend the level and style that fits best.</p>
+
+      <div class="modal__class-card" id="selectedClass">
+        <div class="modal__class-name">Any class — we'll help you choose</div>
+        <div class="modal__class-meta">Tell us about your dancer and we'll recommend the best placement.</div>
+      </div>
+
+      <form id="trialForm" onsubmit="submitTrial(event)">
+        <input type="hidden" name="source_page" value="Schedule page">
+        <input type="hidden" name="form_type" id="formType" value="placement">
+        <input type="hidden" name="selected_class" id="selectedClassInput" value="">
+        <input type="hidden" name="_subject" value="New Placement / Waitlist Request — Perfect Pointe">
+        <div style="position:absolute;left:-9999px;" aria-hidden="true">
+          <label>Website<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-row form-row--two">
+          <div>
+            <label class="form-label">Parent Name</label>
+            <input class="form-input" name="parent_name" type="text" required placeholder="Jane Doe">
+          </div>
+          <div>
+            <label class="form-label">Phone</label>
+            <input class="form-input" name="phone" type="tel" required placeholder="(626) 555-0123">
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Email</label>
+          <input class="form-input" name="email" type="email" required placeholder="jane@email.com">
+        </div>
+        <div class="form-row form-row--two">
+          <div>
+            <label class="form-label">Dancer's Name</label>
+            <input class="form-input" name="dancer_name" type="text" required placeholder="Lily">
+          </div>
+          <div>
+            <label class="form-label">Dancer's Age</label>
+            <select class="form-select" name="dancer_age" required>
+              <option value="">Select age</option>
+              <option>3</option><option>4</option><option>5</option>
+              <option>6</option><option>7</option><option>8</option>
+              <option>9</option><option>10</option><option>11</option><option>12</option>
+              <option>13</option><option>14</option><option>15</option>
+              <option>16</option><option>17</option><option>18</option>
+              <option>Adult</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Prior Dance Experience</label>
+          <select class="form-select" name="experience">
+            <option>Brand new — first class ever</option>
+            <option>A little — informal or short-term</option>
+            <option>Yes — already trained somewhere else</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label">Anything we should know?</label>
+          <textarea class="form-textarea" name="notes" placeholder="Style of interest, scheduling notes, etc."></textarea>
+        </div>
+        <button class="form-submit" type="submit">Request a Placement Class →</button>
+        <div class="form-fineprint">We'll call within one business day.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer__grid">
+    <div>
+      <a href="/" class="logo-mark">
+        <img src="logo.png" alt="Perfect Pointe Dance" class="logo-img">
+      </a>
+      <p class="footer__tag">San Gabriel Valley's premier school of dance, training Covina's dancers since 2010.</p>
+    </div>
+    <div class="footer__col">
+      <h4>Visit</h4>
+      <ul>
+        <li>1034 N. Citrus Ave</li>
+        <li>Covina, CA 91722</li>
+        <li><a href="tel:6264042219">(626) 404-2219</a></li>
+        <li><a href="mailto:info@perfectpointedance.com">info@perfectpointedance.com</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Studio</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/competition">Competition Team</a></li>
+        <li><a href="/nutcracker">Nutcracker</a></li>
+        <li><a href="/schedule">Schedule</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://instagram.com/perfectpointedance" target="_blank" rel="noopener">Instagram @perfectpointedance</a></li>
+        <li><a href="https://www.facebook.com/people/Perfect-Pointe-School-of-Dance-Perfect-Pointe-Performing-Arts-Center/100030903052337/" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Perfect Pointe School of Dance</span>
+    <span>Crafted with care in Covina, CA</span>
+  </div>
+</footer>
+
+<script>
+  // Fall 2026–2027 Schedule (from official flyer) — Aug 17, 2026 – Jun 19, 2027
+  // Updated 7/28/26
+  const classes = [
+    // ───── MONDAY ─────
+    { day:'monday', dayLabel:'Monday', studio:'A', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Primary C', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Chloe' },
+    { day:'monday', dayLabel:'Monday', studio:'A', time:'6:00 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Ballet 1A', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Chloe' },
+    { day:'monday', dayLabel:'Monday', studio:'A', time:'7:00 PM', endTime:'8:45 PM', timeOfDay:'evening', name:'Ballet 2B & Beginner Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Chloe' },
+    { day:'monday', dayLabel:'Monday', studio:'B', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Primary B', discipline:'ballet', disciplineLabel:'Ballet', age:'6-8', ageLabel:'Ages 6–7', teacher:'Ms Autumn' },
+    { day:'monday', dayLabel:'Monday', studio:'B', time:'5:00 PM', endTime:'6:00 PM', timeOfDay:'evening', name:'Ballet 1C', discipline:'ballet', disciplineLabel:'Ballet', age:'9-12', ageLabel:'Ages 9–10', teacher:'Ms Autumn' },
+    { day:'monday', dayLabel:'Monday', studio:'B', time:'7:00 PM', endTime:'8:30 PM', timeOfDay:'evening', name:'Ballet 2A & Pre-Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Autumn' },
+    { day:'monday', dayLabel:'Monday', studio:'C', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Primary A', discipline:'ballet', disciplineLabel:'Ballet', age:['3-5','6-8'], ageLabel:'Ages 5–6', teacher:'Ms Brielle' },
+    { day:'monday', dayLabel:'Monday', studio:'C', time:'5:00 PM', endTime:'6:00 PM', timeOfDay:'evening', name:'Mini Hip Hop', discipline:'hiphop', disciplineLabel:'Hip-Hop', age:['3-5','6-8'], ageLabel:'Ages 5–8', teacher:'Ms Brielle' },
+    { day:'monday', dayLabel:'Monday', studio:'C', time:'6:00 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Jr Hip Hop', discipline:'hiphop', disciplineLabel:'Hip-Hop', age:['6-8','9-12'], ageLabel:'Ages 8–10', teacher:'Ms Brielle' },
+    { day:'monday', dayLabel:'Monday', studio:'C', time:'7:00 PM', endTime:'8:00 PM', timeOfDay:'evening', name:'Int/Sr Commercial', discipline:'commercial', disciplineLabel:'Commercial', age:['9-12','13+'], ageLabel:'Ages 12+', teacher:'Ms Brielle' },
+    { day:'monday', dayLabel:'Monday', studio:'D', time:'6:00 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Jr Hip Hop', discipline:'hiphop', disciplineLabel:'Hip-Hop', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Veronica' },
+    { day:'monday', dayLabel:'Monday', studio:'E', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Jr Lyrical', discipline:'lyrical', disciplineLabel:'Lyrical', age:'9-12', ageLabel:'Ages 11–12', teacher:'Ms Angela' },
+    // ───── TUESDAY ─────
+    { day:'tuesday', dayLabel:'Tuesday', studio:'A', time:'4:30 PM', endTime:'6:30 PM', timeOfDay:'afternoon', name:'Ballet 4B/5 & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Chloe' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'B', time:'4:30 PM', endTime:'5:30 PM', timeOfDay:'afternoon', name:'Tap Level 3', discipline:'tap', disciplineLabel:'Tap', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Miki' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'B', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Beginner Tap', discipline:'tap', disciplineLabel:'Tap', age:'9-12', ageLabel:'Ages 9–12', teacher:'Ms Miki' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'B', time:'7:30 PM', endTime:'8:30 PM', timeOfDay:'evening', name:'Tap Level 4/5', discipline:'tap', disciplineLabel:'Tap', age:['9-12','13+'], ageLabel:'Ages 12+', teacher:'Ms Miki' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'C', time:'4:45 PM', endTime:'5:30 PM', timeOfDay:'afternoon', name:'Mini Tap', discipline:'tap', disciplineLabel:'Tap', age:'3-5', ageLabel:'Ages 4–6', teacher:'Ms Angela' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'C', time:'6:00 PM', endTime:'6:45 PM', timeOfDay:'evening', name:'Mini Lyrical (Primary C/1A Invite)', discipline:'lyrical', disciplineLabel:'Lyrical', age:['6-8'], ageLabel:'Ages 6–8', teacher:'Ms Angela' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'C', time:'6:45 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Mini Jazz', discipline:'jazz', disciplineLabel:'Jazz', age:['3-5','6-8'], ageLabel:'Ages 5–8', teacher:'Ms Angela' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'C', time:'7:30 PM', endTime:'8:30 PM', timeOfDay:'evening', name:'Jr Jazz', discipline:'jazz', disciplineLabel:'Jazz', age:'9-12', ageLabel:'Ages 9–11', teacher:'Ms Angela' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'D', time:'5:30 PM', endTime:'6:30 PM', timeOfDay:'evening', name:'Jr Lyrical', discipline:'lyrical', disciplineLabel:'Lyrical', age:'9-12', ageLabel:'Ages 9–11', teacher:'Ms Stephanie' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'D', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Sr Lyrical', discipline:'lyrical', disciplineLabel:'Lyrical', age:'13+', ageLabel:'Ages 15+', teacher:'Ms Stephanie' },
+    { day:'thursday', dayLabel:'Thursday', studio:'E', time:'4:00 PM', endTime:'6:00 PM', timeOfDay:'afternoon', name:'Tumbling', discipline:'tumbling', disciplineLabel:'Tumbling', age:'mixed', ageLabel:'All Ages', teacher:'Ms Valetina & Micah' },
+    { day:'tuesday', dayLabel:'Tuesday', studio:'E', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Jr Commercial', discipline:'commercial', disciplineLabel:'Commercial', age:'9-12', ageLabel:'Ages 9–11', teacher:'Ms Brielle' },
+    // ───── WEDNESDAY ─────
+    { day:'wednesday', dayLabel:'Wednesday', studio:'A', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Primary C', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Chloe' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'A', time:'5:30 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Ballet 2A & Pre-Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Chloe' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'A', time:'7:00 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Ballet 4A & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Chloe' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'B', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Tap Level 2', discipline:'tap', disciplineLabel:'Tap', age:['6-8','9-12'], ageLabel:'Ages 8–10', teacher:'Ms Miki' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'B', time:'5:30 PM', endTime:'6:30 PM', timeOfDay:'evening', name:'Tap Level 1', discipline:'tap', disciplineLabel:'Tap', age:'6-8', ageLabel:'Ages 6–8', teacher:'Ms Miki' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'B', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Adult Tap', discipline:'tap', disciplineLabel:'Tap', age:'adult', ageLabel:'Adult', teacher:'Ms Miki' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'C', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Jr Jazz', discipline:'jazz', disciplineLabel:'Jazz', age:'9-12', ageLabel:'Ages 11–12', teacher:'Ms Sarah' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'C', time:'6:00 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Sr Jazz', discipline:'jazz', disciplineLabel:'Jazz', age:'13+', ageLabel:'Ages 15+', teacher:'Ms Sarah' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'D', time:'4:00 PM', endTime:'6:00 PM', timeOfDay:'afternoon', name:'Ballet 4B & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Ariana' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'D', time:'6:30 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Ballet 3A & Beginner Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Ariana' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'4:45 PM', endTime:'5:30 PM', timeOfDay:'afternoon', name:'Petite Pointers', discipline:'ballet', disciplineLabel:'Ballet', age:'3-5', ageLabel:'Ages 3–5', teacher:'Ms Natalie' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'5:30 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Ballet 2B & Beginner Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Natalie' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'7:00 PM', endTime:'8:00 PM', timeOfDay:'evening', name:'Primary B', discipline:'ballet', disciplineLabel:'Ballet', age:'6-8', ageLabel:'Ages 6–7', teacher:'Ms Natalie' },
+    { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'8:00 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Teen Beginner Ballet', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Natalie' },
+    // ───── THURSDAY ─────
+    { day:'thursday', dayLabel:'Thursday', studio:'A', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Int Lyrical (Level 4A & 4B)', discipline:'lyrical', disciplineLabel:'Lyrical', age:['9-12','13+'], ageLabel:'Ages 12–14', teacher:'Ms Stephanie' },
+    { day:'thursday', dayLabel:'Thursday', studio:'A', time:'7:30 PM', endTime:'8:30 PM', timeOfDay:'evening', name:'Int Jazz (Level 4A & 4B)', discipline:'jazz', disciplineLabel:'Jazz', age:['9-12','13+'], ageLabel:'Ages 12–14', teacher:'Ms Stephanie' },
+    { day:'thursday', dayLabel:'Thursday', studio:'D', time:'4:00 PM', endTime:'6:30 PM', timeOfDay:'afternoon', name:'Ballet 4A & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Mr Brandon' },
+    { day:'thursday', dayLabel:'Thursday', studio:'D', time:'6:30 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Ballet 5 & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Mr Brandon' },
+    // ───── FRIDAY ─────
+    { day:'friday', dayLabel:'Friday', studio:'A', time:'7:00 PM', endTime:'8:45 PM', timeOfDay:'evening', name:'Ballet 3A & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Chloe' },
+    { day:'friday', dayLabel:'Friday', studio:'B, C & D', time:'4:00 PM', endTime:'8:00 PM', timeOfDay:'afternoon', name:'Team Classes', discipline:'team', disciplineLabel:'Team', age:'mixed', ageLabel:'Team', teacher:'Studio Team' },
+    { day:'friday', dayLabel:'Friday', studio:'E', time:'5:00 PM', endTime:'5:45 PM', timeOfDay:'evening', name:'Petite Pointers', discipline:'ballet', disciplineLabel:'Ballet', age:'3-5', ageLabel:'Ages 3–5', teacher:'Ms Brielle' },
+    // ───── SATURDAY ─────
+    { day:'saturday', dayLabel:'Saturday', studio:'E', time:'9:00 AM', endTime:'10:00 AM', timeOfDay:'morning', name:'Primary A', discipline:'ballet', disciplineLabel:'Ballet', age:['3-5','6-8'], ageLabel:'Ages 5–6', teacher:'Ms Autumn' },
+    { day:'saturday', dayLabel:'Saturday', studio:'C', time:'9:30 AM', endTime:'10:30 AM', timeOfDay:'morning', name:'Ballet 1C', discipline:'ballet', disciplineLabel:'Ballet', age:'9-12', ageLabel:'Ages 9–10', teacher:'Ms Chloe' },
+    { day:'saturday', dayLabel:'Saturday', studio:'D', time:'9:30 AM', endTime:'10:30 AM', timeOfDay:'morning', name:'Int/Sr Hip Hop', discipline:'hiphop', disciplineLabel:'Hip-Hop', age:['9-12','13+'], ageLabel:'Ages 12+', teacher:'Ms Veronica' },
+    { day:'saturday', dayLabel:'Saturday', studio:'B', time:'10:30 AM', endTime:'11:30 AM', timeOfDay:'morning', name:'Jr Modern', discipline:'modern', disciplineLabel:'Modern', age:'9-12', ageLabel:'Ages 9–12', teacher:'Ms Grace' },
+    { day:'saturday', dayLabel:'Saturday', studio:'E', time:'10:15 AM', endTime:'11:00 AM', timeOfDay:'morning', name:'Mini Lyrical', discipline:'lyrical', disciplineLabel:'Lyrical', age:['3-5','6-8'], ageLabel:'Ages 5–8', teacher:'Ms Autumn' },
+    { day:'saturday', dayLabel:'Saturday', studio:'E', time:'11:00 AM', endTime:'12:00 PM', timeOfDay:'morning', name:'Ballet 1A', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Autumn' },
+    { day:'saturday', dayLabel:'Saturday', studio:'B', time:'11:30 AM', endTime:'12:30 PM', timeOfDay:'morning', name:'Int/Sr Modern', discipline:'modern', disciplineLabel:'Modern', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Grace' },
+  ];
+
+  let activeFilters = { discipline: 'all', age: 'all', day: 'all' };
+  let modalIsFull = false;
+
+  function timeToMinutes(t) {
+    if (!t || !t.includes(':')) return 9999; // sort TBA/unknown to end
+    const [hm, ap] = t.split(' ');
+    let [h, m] = hm.split(':').map(Number);
+    if (ap === 'PM' && h !== 12) h += 12;
+    if (ap === 'AM' && h === 12) h = 0;
+    return h * 60 + m;
+  }
+
+  function renderSchedule() {
+    const container = document.getElementById('schedule');
+    const dayOrder = ['monday','tuesday','wednesday','thursday','friday','saturday'];
+    const grouped = {};
+    dayOrder.forEach(d => grouped[d] = []);
+    classes.forEach(c => grouped[c.day].push(c));
+    dayOrder.forEach(d => grouped[d].sort((a, b) => timeToMinutes(a.time) - timeToMinutes(b.time) || a.studio.localeCompare(b.studio)));
+
+    container.innerHTML = '';
+    let totalVisible = 0;
+
+    dayOrder.forEach(day => {
+      if (grouped[day].length === 0) return;
+      const visibleInDay = grouped[day].filter(matchesFilters);
+      if (visibleInDay.length === 0) return;
+      totalVisible += visibleInDay.length;
+
+      const dayEl = document.createElement('div');
+      dayEl.className = 'schedule-day';
+      const dayLabel = grouped[day][0].dayLabel;
+      dayEl.innerHTML = `
+        <div class="schedule-day__header">
+          <h3 class="schedule-day__name">${dayLabel}</h3>
+          <span class="schedule-day__count">${visibleInDay.length} class${visibleInDay.length === 1 ? '' : 'es'}</span>
+        </div>
+      `;
+
+      visibleInDay.forEach(c => {
+        const row = document.createElement('div');
+        row.className = 'class-row';
+        const ageLabels = Array.isArray(c.ageLabel) ? c.ageLabel : [c.ageLabel];
+        const ageTags = ageLabels.map(l => `<span class="tag tag--age">${l}</span>`).join('');
+        const studioIsMulti = /[,&]/.test(c.studio);
+        row.innerHTML = `
+          <div class="class-time">
+            ${c.endTime ? `${c.time}<span class="class-time__sep">–</span>${c.endTime}` : c.time}
+          </div>
+          <div class="class-info">
+            <div class="class-info__name">${c.name}</div>
+            <div class="class-info__teacher">${c.teacher}</div>
+          </div>
+          <div class="class-tags">
+            <span class="tag">${c.disciplineLabel}</span>
+            ${ageTags}
+            ${c.full ? '<span class="tag tag--full">Full</span>' : ''}
+          </div>
+          <div class="class-studio">
+            <strong>Studio${studioIsMulti ? 's' : ''}</strong>
+            ${c.studio}
+          </div>
+          <button class="class-cta${c.full ? ' class-cta--full' : ''}" data-class='${JSON.stringify(c).replace(/'/g, "&apos;")}'>
+            ${c.full ? 'Join Waitlist →' : 'Contact for Placement'}
+          </button>
+        `;
+        dayEl.appendChild(row);
+      });
+      container.appendChild(dayEl);
+    });
+
+    container.querySelectorAll('.class-cta').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const data = JSON.parse(e.currentTarget.dataset.class.replace(/&apos;/g, "'"));
+        openModal(data);
+      });
+    });
+
+    document.getElementById('visibleCount').textContent = totalVisible;
+    document.getElementById('emptyState').classList.toggle('visible', totalVisible === 0);
+  }
+
+  function matchesFilters(c) {
+    if (activeFilters.discipline !== 'all' && c.discipline !== activeFilters.discipline) return false;
+    if (activeFilters.age !== 'all') {
+      const ages = Array.isArray(c.age) ? c.age : [c.age];
+      if (!ages.includes(activeFilters.age)) return false;
+    }
+    if (activeFilters.day !== 'all' && c.day !== activeFilters.day) return false;
+    return true;
+  }
+
+  document.querySelectorAll('.filter-pills').forEach(group => {
+    const filterName = group.dataset.filter;
+    group.addEventListener('click', (e) => {
+      const pill = e.target.closest('.filter-pill');
+      if (!pill) return;
+      group.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeFilters[filterName] = pill.dataset.value;
+      renderSchedule();
+    });
+  });
+
+  function clearFilters() {
+    activeFilters = { discipline: 'all', age: 'all', day: 'all' };
+    document.querySelectorAll('.filter-pills').forEach(group => {
+      group.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+      group.querySelector('.filter-pill[data-value="all"]').classList.add('active');
+    });
+    renderSchedule();
+  }
+
+  function openModal(classData) {
+    const modal = document.getElementById('modal');
+    const card = document.getElementById('selectedClass');
+    modalIsFull = !!(classData && classData.full);
+
+    if (classData) {
+      card.innerHTML = `
+        <div class="modal__class-name">${classData.name}${modalIsFull ? ' <span class="tag tag--full" style="vertical-align:middle;">Full</span>' : ''}</div>
+        <div class="modal__class-meta">${classData.dayLabel} · ${classData.endTime ? `${classData.time} – ${classData.endTime}` : classData.time} · Studio${/[,&]/.test(classData.studio) ? 's' : ''} ${classData.studio} · ${Array.isArray(classData.ageLabel) ? classData.ageLabel.join(' · ') : classData.ageLabel} · with ${classData.teacher}</div>
+      `;
+    } else {
+      card.innerHTML = `
+        <div class="modal__class-name">Any class — we'll help you choose</div>
+        <div class="modal__class-meta">Tell us about your dancer and we'll recommend the best placement.</div>
+      `;
+    }
+
+    const eyebrow = document.querySelector('.modal__eyebrow');
+    const title = document.querySelector('.modal__title');
+    const sub = document.querySelector('.modal__sub');
+    const submitBtn = document.querySelector('.form-submit');
+    if (eyebrow && title && sub && submitBtn) {
+      if (modalIsFull) {
+        eyebrow.innerHTML = '★ Join the Waitlist';
+        title.textContent = 'Join the waitlist for this class.';
+        sub.textContent = "This class is currently full — but we'll hold your dancer's spot on our waitlist and reach out the moment an opening comes up.";
+        submitBtn.textContent = 'Join the Waitlist →';
+      } else {
+        eyebrow.innerHTML = '★ Find the Right Fit';
+        title.textContent = 'Contact us for a placement class.';
+        sub.textContent = "Tell us a little about your dancer and we'll be in touch to schedule a placement class. Our teachers will recommend the level and style that fits best.";
+        submitBtn.textContent = 'Request a Placement Class →';
+      }
+    }
+
+    if (!document.getElementById('trialForm')) { location.reload(); return; }
+
+    // Record class + request type so the emailed submission includes them.
+    const typeInput = document.getElementById('formType');
+    const classInput = document.getElementById('selectedClassInput');
+    if (typeInput) typeInput.value = modalIsFull ? 'waitlist' : 'placement';
+    if (classInput) {
+      if (classData) {
+        const timeStr = classData.endTime ? `${classData.time} – ${classData.endTime}` : classData.time;
+        const ageStr = Array.isArray(classData.ageLabel) ? classData.ageLabel.join(' · ') : classData.ageLabel;
+        classInput.value = `${classData.name} (${classData.dayLabel} · ${timeStr} · Studio ${classData.studio} · ${ageStr} · with ${classData.teacher})${modalIsFull ? ' [FULL — waitlist]' : ''}`;
+      } else {
+        classInput.value = '';
+      }
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modal').classList.remove('open');
+    document.body.style.overflow = '';
+    modalIsFull = false;
+  }
+
+  async function submitTrial(e) {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('.form-submit');
+    const originalLabel = btn.textContent;
+    const wasFull = modalIsFull;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('submit.php', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form)
+      });
+      const data = await res.json();
+      if (!(data.success === 'true' || data.success === true)) throw new Error(data.message || 'Send failed');
+
+      const successTitle = wasFull ? "You're on the list." : 'Request received.';
+      const successText = wasFull
+        ? "Thanks — we've added your dancer to the waitlist for this class and will reach out the moment a spot opens up."
+        : "Thanks — we'll reach out within one business day to schedule your placement class. Welcome to the Perfect Pointe family.";
+      document.getElementById('modalContent').innerHTML = `
+        <div class="success">
+          <div class="success__check">✓</div>
+          <h2 class="success__title">${successTitle}</h2>
+          <p class="success__text">${successText}</p>
+          <button class="form-submit" onclick="closeModal()">Done</button>
+        </div>
+      `;
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = originalLabel;
+      alert("Sorry — something went wrong sending your request. Please call us at (626) 404-2219 or email info@perfectpointedance.com and we'll get you scheduled.");
+    }
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  renderSchedule();
+
+  // Nav padding shrink on scroll
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      nav.style.padding = '14px 56px';
+    } else {
+      nav.style.padding = '20px 56px';
+    }
+  });
+
+  // Mobile nav
+  function closeMobileNav() {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('navHamburger').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+</script>
+
+</body>
+</html>
