@@ -7,7 +7,7 @@
 
 header('Content-Type: application/json; charset=utf-8');
 
-$RECIPIENT = 'info@perfectpointedance.com';
+$RECIPIENT = 'covina@perfectpointedance.com';
 // Envelope/From must be an address on this domain for good deliverability.
 $FROM      = 'Perfect Pointe Website <info@perfectpointedance.com>';
 
