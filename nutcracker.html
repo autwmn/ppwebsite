@@ -992,7 +992,7 @@
 </footer>
 
 <script>
-  // Intro Carousel
+
   (function() {
     const track = document.getElementById('carouselTrack');
     const dots = document.querySelectorAll('.intro-carousel__dot');
@@ -1017,7 +1017,6 @@
     resetTimer();
   })();
 
-  // Nav padding shrink on scroll
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -1027,7 +1026,6 @@
     }
   });
 
-  // Mobile nav
   function closeMobileNav() {
     document.getElementById('mobileNav').classList.remove('open');
     document.body.style.overflow = '';

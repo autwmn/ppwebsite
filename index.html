@@ -1992,7 +1992,6 @@
     }
   });
 
-  // Mobile nav
   function closeMobileNav() {
     document.getElementById('mobileNav').classList.remove('open');
     document.body.style.overflow = '';
@@ -2003,7 +2002,6 @@
   });
   document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
 
-  // Placement modal
   function openModal() {
     const modal = document.getElementById('modal');
     modal.classList.add('open');
@@ -2051,7 +2049,6 @@
     if (e.key === 'Escape') closeModal();
   });
 
-  // Testimonials photo rotator (click sides to navigate)
   (function () {
     const rotator = document.getElementById('testimonialRotator');
     if (!rotator) return;

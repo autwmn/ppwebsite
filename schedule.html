@@ -1145,10 +1145,9 @@
 </footer>
 
 <script>
-  // Fall 2026–2027 Schedule (from official flyer) — Aug 17, 2026 – Jun 19, 2027
-  // Updated 7/28/26
+
   const classes = [
-    // ───── MONDAY ─────
+
     { day:'monday', dayLabel:'Monday', studio:'A', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Primary C', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Chloe' },
     { day:'monday', dayLabel:'Monday', studio:'A', time:'6:00 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Ballet 1A', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Chloe' },
     { day:'monday', dayLabel:'Monday', studio:'A', time:'7:00 PM', endTime:'8:45 PM', timeOfDay:'evening', name:'Ballet 2B & Beginner Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Chloe' },
@@ -1161,7 +1160,7 @@
     { day:'monday', dayLabel:'Monday', studio:'C', time:'7:00 PM', endTime:'8:00 PM', timeOfDay:'evening', name:'Int/Sr Commercial', discipline:'commercial', disciplineLabel:'Commercial', age:['9-12','13+'], ageLabel:'Ages 12+', teacher:'Ms Brielle' },
     { day:'monday', dayLabel:'Monday', studio:'D', time:'6:00 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Jr Hip Hop', discipline:'hiphop', disciplineLabel:'Hip-Hop', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Veronica' },
     { day:'monday', dayLabel:'Monday', studio:'E', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Jr Lyrical', discipline:'lyrical', disciplineLabel:'Lyrical', age:'9-12', ageLabel:'Ages 11–12', teacher:'Ms Angela' },
-    // ───── TUESDAY ─────
+
     { day:'tuesday', dayLabel:'Tuesday', studio:'A', time:'4:30 PM', endTime:'6:30 PM', timeOfDay:'afternoon', name:'Ballet 4B/5 & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Chloe' },
     { day:'tuesday', dayLabel:'Tuesday', studio:'B', time:'4:30 PM', endTime:'5:30 PM', timeOfDay:'afternoon', name:'Tap Level 3', discipline:'tap', disciplineLabel:'Tap', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Miki' },
     { day:'tuesday', dayLabel:'Tuesday', studio:'B', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Beginner Tap', discipline:'tap', disciplineLabel:'Tap', age:'9-12', ageLabel:'Ages 9–12', teacher:'Ms Miki' },
@@ -1174,7 +1173,7 @@
     { day:'tuesday', dayLabel:'Tuesday', studio:'D', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Sr Lyrical', discipline:'lyrical', disciplineLabel:'Lyrical', age:'13+', ageLabel:'Ages 15+', teacher:'Ms Stephanie' },
     { day:'thursday', dayLabel:'Thursday', studio:'E', time:'4:00 PM', endTime:'6:00 PM', timeOfDay:'afternoon', name:'Tumbling', discipline:'tumbling', disciplineLabel:'Tumbling', age:'mixed', ageLabel:'All Ages', teacher:'Ms Valetina & Micah' },
     { day:'tuesday', dayLabel:'Tuesday', studio:'E', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Jr Commercial', discipline:'commercial', disciplineLabel:'Commercial', age:'9-12', ageLabel:'Ages 9–11', teacher:'Ms Brielle' },
-    // ───── WEDNESDAY ─────
+
     { day:'wednesday', dayLabel:'Wednesday', studio:'A', time:'4:00 PM', endTime:'5:00 PM', timeOfDay:'afternoon', name:'Primary C', discipline:'ballet', disciplineLabel:'Ballet', age:['6-8','9-12'], ageLabel:'Ages 7–9', teacher:'Ms Chloe' },
     { day:'wednesday', dayLabel:'Wednesday', studio:'A', time:'5:30 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Ballet 2A & Pre-Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'9-12', ageLabel:'Ages 10–12', teacher:'Ms Chloe' },
     { day:'wednesday', dayLabel:'Wednesday', studio:'A', time:'7:00 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Ballet 4A & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Chloe' },
@@ -1189,16 +1188,16 @@
     { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'5:30 PM', endTime:'7:00 PM', timeOfDay:'evening', name:'Ballet 2B & Beginner Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Natalie' },
     { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'7:00 PM', endTime:'8:00 PM', timeOfDay:'evening', name:'Primary B', discipline:'ballet', disciplineLabel:'Ballet', age:'6-8', ageLabel:'Ages 6–7', teacher:'Ms Natalie' },
     { day:'wednesday', dayLabel:'Wednesday', studio:'E', time:'8:00 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Teen Beginner Ballet', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Ms Natalie' },
-    // ───── THURSDAY ─────
+
     { day:'thursday', dayLabel:'Thursday', studio:'A', time:'6:30 PM', endTime:'7:30 PM', timeOfDay:'evening', name:'Int Lyrical (Level 4A & 4B)', discipline:'lyrical', disciplineLabel:'Lyrical', age:['9-12','13+'], ageLabel:'Ages 12–14', teacher:'Ms Stephanie' },
     { day:'thursday', dayLabel:'Thursday', studio:'A', time:'7:30 PM', endTime:'8:30 PM', timeOfDay:'evening', name:'Int Jazz (Level 4A & 4B)', discipline:'jazz', disciplineLabel:'Jazz', age:['9-12','13+'], ageLabel:'Ages 12–14', teacher:'Ms Stephanie' },
     { day:'thursday', dayLabel:'Thursday', studio:'D', time:'4:00 PM', endTime:'6:30 PM', timeOfDay:'afternoon', name:'Ballet 4A & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Mr Brandon' },
     { day:'thursday', dayLabel:'Thursday', studio:'D', time:'6:30 PM', endTime:'9:00 PM', timeOfDay:'evening', name:'Ballet 5 & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:'13+', ageLabel:'Teens 13+', teacher:'Mr Brandon' },
-    // ───── FRIDAY ─────
+
     { day:'friday', dayLabel:'Friday', studio:'A', time:'7:00 PM', endTime:'8:45 PM', timeOfDay:'evening', name:'Ballet 3A & Pointe', discipline:'ballet', disciplineLabel:'Ballet', age:['9-12','13+'], ageLabel:'Ages 10–14', teacher:'Ms Chloe' },
     { day:'friday', dayLabel:'Friday', studio:'B, C & D', time:'4:00 PM', endTime:'8:00 PM', timeOfDay:'afternoon', name:'Team Classes', discipline:'team', disciplineLabel:'Team', age:'mixed', ageLabel:'Team', teacher:'Studio Team' },
     { day:'friday', dayLabel:'Friday', studio:'E', time:'5:00 PM', endTime:'5:45 PM', timeOfDay:'evening', name:'Petite Pointers', discipline:'ballet', disciplineLabel:'Ballet', age:'3-5', ageLabel:'Ages 3–5', teacher:'Ms Brielle' },
-    // ───── SATURDAY ─────
+
     { day:'saturday', dayLabel:'Saturday', studio:'E', time:'9:00 AM', endTime:'10:00 AM', timeOfDay:'morning', name:'Primary A', discipline:'ballet', disciplineLabel:'Ballet', age:['3-5','6-8'], ageLabel:'Ages 5–6', teacher:'Ms Autumn' },
     { day:'saturday', dayLabel:'Saturday', studio:'C', time:'9:30 AM', endTime:'10:30 AM', timeOfDay:'morning', name:'Ballet 1C', discipline:'ballet', disciplineLabel:'Ballet', age:'9-12', ageLabel:'Ages 9–10', teacher:'Ms Chloe' },
     { day:'saturday', dayLabel:'Saturday', studio:'D', time:'9:30 AM', endTime:'10:30 AM', timeOfDay:'morning', name:'Int/Sr Hip Hop', discipline:'hiphop', disciplineLabel:'Hip-Hop', age:['9-12','13+'], ageLabel:'Ages 12+', teacher:'Ms Veronica' },
@@ -1212,7 +1211,7 @@
   let modalIsFull = false;
 
   function timeToMinutes(t) {
-    if (!t || !t.includes(':')) return 9999; // sort TBA/unknown to end
+    if (!t || !t.includes(':')) return 9999;
     const [hm, ap] = t.split(' ');
     let [h, m] = hm.split(':').map(Number);
     if (ap === 'PM' && h !== 12) h += 12;
@@ -1358,7 +1357,6 @@
 
     if (!document.getElementById('trialForm')) { location.reload(); return; }
 
-    // Record class + request type so the emailed submission includes them.
     const typeInput = document.getElementById('formType');
     const classInput = document.getElementById('selectedClassInput');
     if (typeInput) typeInput.value = modalIsFull ? 'waitlist' : 'placement';
@@ -1425,7 +1423,6 @@
 
   renderSchedule();
 
-  // Nav padding shrink on scroll
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
@@ -1435,7 +1432,6 @@
     }
   });
 
-  // Mobile nav
   function closeMobileNav() {
     document.getElementById('mobileNav').classList.remove('open');
     document.body.style.overflow = '';

@@ -813,7 +813,7 @@
 </footer>
 
 <script>
-  // Nav padding shrink on scroll
+
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     if (window.matchMedia('(max-width: 968px)').matches) {
@@ -827,7 +827,6 @@
     }
   });
 
-  // Mobile nav
   function closeMobileNav() {
     document.getElementById('mobileNav').classList.remove('open');
     document.body.style.overflow = '';
@@ -838,7 +837,6 @@
   });
   document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
 
-  // Competition team photo carousels (supports multiple on the page)
   document.querySelectorAll('.team-carousel').forEach(function (root) {
     const slides = Array.from(root.querySelectorAll('.team-carousel__slide'));
     const dots = Array.from(root.querySelectorAll('.team-carousel__dot'));
