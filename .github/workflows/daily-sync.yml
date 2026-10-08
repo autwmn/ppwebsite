@@ -1,41 +1,19 @@
 name: Daily Sync
 on:
   schedule:
-    - cron: '0 0 * * *'  # 5 PM Pacific Time
+    - cron: '0 0 * * *'
 
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
       
-      - name: Clean HTML files
+      - name: Clean HTML files (remove all comments)
         run: |
-          node << 'SCRIPT'
-          const fs = require('fs');
-          const path = require('path');
-          
-          function cleanHTML(dir) {
-            const files = fs.readdirSync(dir);
-            files.forEach(file => {
-              const filePath = path.join(dir, file);
-              const stat = fs.statSync(filePath);
-              if (stat.isDirectory() && file !== 'node_modules' && file !== '.git') {
-                cleanHTML(filePath);
-              } else if (file.endsWith('.html')) {
-                let content = fs.readFileSync(filePath, 'utf-8');
-                content = content.replace(/<!--[\s\S]*?-->/g, '');
-                content = content.replace(/\n\s*\n\s*\n/g, '\n\n');
-                fs.writeFileSync(filePath, content, 'utf-8');
-              }
-            });
-          }
-          
-          cleanHTML('.');
-          SCRIPT
+          for file in $(find . -name "*.html" -not -path "./node_modules/*" -not -path "./.git/*"); do
+            sed -i '/<\!--/,/-->/d' "$file"
+          done
       
       - name: Commit and push
         run: |
