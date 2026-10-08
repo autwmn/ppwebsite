@@ -1,0 +1,46 @@
+name: Daily Sync
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 5 PM Pacific Time
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Clean HTML files
+        run: |
+          node << 'SCRIPT'
+          const fs = require('fs');
+          const path = require('path');
+          
+          function cleanHTML(dir) {
+            const files = fs.readdirSync(dir);
+            files.forEach(file => {
+              const filePath = path.join(dir, file);
+              const stat = fs.statSync(filePath);
+              if (stat.isDirectory() && file !== 'node_modules' && file !== '.git') {
+                cleanHTML(filePath);
+              } else if (file.endsWith('.html')) {
+                let content = fs.readFileSync(filePath, 'utf-8');
+                content = content.replace(/<!--[\s\S]*?-->/g, '');
+                content = content.replace(/\n\s*\n\s*\n/g, '\n\n');
+                fs.writeFileSync(filePath, content, 'utf-8');
+              }
+            });
+          }
+          
+          cleanHTML('.');
+          SCRIPT
+      
+      - name: Commit and push
+        run: |
+          git config user.email "autumnjoyner06@gmail.com"
+          git config user.name "Autumn Joyner"
+          git add .
+          git commit -m "Daily sync: $(date +%Y-%m-%d)" || true
+          git push origin main
