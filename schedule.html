@@ -43,10 +43,9 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ---------- LOGO ---------- */
   .logo-mark { display: inline-block; text-decoration: none; line-height: 0; }
   .logo-img { height: 260px; width: auto; display: block; }
-  /* Nav logo → constrained height + brand blue on light bg */
+  
   .nav .logo-img {
     height: 70px;
     filter: brightness(0) saturate(100%) invert(34%) sepia(44%) saturate(1246%) hue-rotate(190deg) brightness(100%) contrast(91%);
@@ -54,7 +53,6 @@
   .footer .logo-img { height: 52px; }
   footer .logo-img { width: 340px; max-width: 100%; height: auto; }
 
-  /* ---------- NAV ---------- */
   .nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     padding: 10px 56px;
@@ -73,7 +71,6 @@
     font-weight: 400; transition: color 0.25s; position: relative;
   }
 
-  /* ---------- HAMBURGER + MOBILE NAV ---------- */
   .nav__hamburger {
     display: none;
     flex-direction: column;
@@ -165,7 +162,6 @@
   .nav__cta:hover { background: var(--blue); transform: translateY(-1px); box-shadow: 0 12px 24px rgba(45, 95, 168, 0.25); }
   .nav__cta::after { display: none; }
 
-  /* ---------- PAGE HEADER ---------- */
   .page-header {
     padding: 136px 56px 36px;
     text-align: center;
@@ -227,7 +223,6 @@
   .page-header__register span { transition: transform 0.3s; }
   .page-header__register:hover span { transform: translateX(4px); }
 
-  /* ---------- PHOTO SLOT ---------- */
   .photo-slot {
     position: relative;
     background: linear-gradient(135deg, var(--sky), var(--blue-soft));
@@ -257,7 +252,6 @@
     text-transform: uppercase; opacity: 0.65; font-weight: 500;
   }
 
-  /* ---------- PLACEMENT BANNER ---------- */
   .placement-banner {
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
     color: var(--pearl);
@@ -302,7 +296,6 @@
   }
   .placement-banner__btn:hover { background: var(--gold-soft); transform: translateY(-1px); }
 
-  /* ---------- FILTERS ---------- */
   .filters {
     padding: 48px 56px 24px;
     max-width: 1400px;
@@ -369,7 +362,6 @@
   }
   .filter-clear:hover { color: var(--blue); }
 
-  /* ---------- SCHEDULE ---------- */
   .schedule {
     padding: 32px 56px 80px;
     max-width: 1400px;
@@ -493,7 +485,6 @@
     max-width: 480px; margin: 0 auto 32px;
   }
 
-  /* ---------- TUITION + INFO + PHOTO ACCENT ---------- */
   .info-band {
     background: var(--mist);
     padding: 64px 56px;
@@ -606,7 +597,6 @@
   .tuition-note { font-size: 13px; line-height: 1.55; color: var(--slate-soft); margin-top: 18px; }
   .tuition-note--top { margin-top: 4px; margin-bottom: 8px; }
 
-  /* ---------- MODAL ---------- */
   .modal-overlay {
     position: fixed; inset: 0;
     background: rgba(10, 31, 61, 0.55);
@@ -751,7 +741,6 @@
     line-height: 1.55; margin-bottom: 28px; font-weight: 300;
   }
 
-  /* ---------- FOOTER ---------- */
   footer {
     background: var(--navy-deep); color: var(--sky);
     padding: 96px 56px 40px;

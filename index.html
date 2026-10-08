@@ -45,7 +45,6 @@
 
   img { max-width: 100%; display: block; }
 
-  /* ---------- LOGO ---------- */
   .logo-mark {
     display: inline-block;
     text-decoration: none;
@@ -56,7 +55,7 @@
     width: auto;
     display: block;
   }
-  /* Nav logo → constrained height + brand blue on light bg */
+  
   .nav .logo-img {
     height: 70px;
     filter: brightness(0) saturate(100%) invert(34%) sepia(44%) saturate(1246%) hue-rotate(190deg) brightness(100%) contrast(91%);
@@ -64,7 +63,6 @@
   .footer .logo-img { height: 52px; }
   footer .logo-img { width: 340px; max-width: 100%; height: auto; }
 
-  /* ---------- NAV ---------- */
   .nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -88,7 +86,6 @@
     position: relative;
   }
 
-  /* ---------- HAMBURGER + MOBILE NAV ---------- */
   .nav__hamburger {
     display: none;
     flex-direction: column;
@@ -193,7 +190,6 @@
   }
   .nav__cta::after { display: none; }
 
-  /* ---------- HERO ---------- */
   .hero {
     min-height: auto;
     padding: 136px 44px 56px;
@@ -298,7 +294,7 @@
     opacity: 0;
     animation: fadeUp 1s ease 0.65s forwards;
   }
-  /* Hero buttons: smaller so all three sit on one line */
+  
   .hero__content .hero__ctas { flex-wrap: nowrap; gap: 12px; }
   .hero__content .hero__ctas .btn {
     padding: 14px 22px; font-size: 15px; gap: 8px; white-space: nowrap;
@@ -377,9 +373,7 @@
     opacity: 0;
     animation: fadeIn 1.2s ease 0.4s forwards;
   }
-  /* Wrapper hugs the right edge and is sized to the photo's own rendered
-     width, so the badge/chip below can reliably spill past its left edge
-     (into the space a second photo used to fill) at any viewport size. */
+  
   .hero__photo-wrap {
     position: relative;
     height: 100%;
@@ -393,17 +387,13 @@
     overflow: hidden;
     box-shadow: 0 30px 80px rgba(10, 31, 61, 0.18);
   }
-  /* Main portrait — frame locked to the image's exact aspect ratio (820 × 1213)
-     so the photo fills the frame perfectly at any browser size. The frame scales
-     up and down with the viewport; the image inside never stretches or crops. */
+  
   .hero__card--main {
     aspect-ratio: 820 / 1213;
     max-width: 100%;
     background: #d6d5d3;
   }
-  /* Hero photos: fill the frame fully — because each frame's aspect-ratio matches
-     its image, object-fit: cover never has to crop. Resizing the browser changes
-     the frame's size but not its shape, so the image stays composed identically. */
+  
   .hero__photo {
     position: absolute;
     inset: 0;
@@ -413,8 +403,7 @@
     object-position: center center;
     display: block;
   }
-  /* Trust badge — floats off the photo's top-left edge, filling the space a
-     second photo used to occupy with a credibility stat instead. */
+  
   .hero__badge {
     position: absolute;
     top: 32px; left: -110px;
@@ -446,7 +435,7 @@
     margin-top: 2px;
     font-weight: 500;
   }
-  /* Review chip — floats off the photo's bottom-left edge, mirroring the badge. */
+  
   .hero__chip {
     position: absolute;
     bottom: 32px; left: -140px;
@@ -485,7 +474,6 @@
     font-weight: 500;
   }
 
-  /* ---------- PHOTO SLOT (placeholder) ---------- */
   .photo-slot {
     position: relative;
     background: linear-gradient(135deg, var(--sky), var(--blue-soft));
@@ -530,7 +518,6 @@
     font-weight: 500;
   }
 
-  /* ---------- MARQUEE ---------- */
   .marquee {
     background: var(--navy-deep);
     color: var(--pearl);
@@ -566,7 +553,6 @@
     align-self: center;
   }
 
-  /* ---------- SECTION SHARED ---------- */
   section { padding: 80px 56px; position: relative; }
   .section-eyebrow {
     font-size: 12px;
@@ -588,7 +574,6 @@
   }
   .section-title em { font-style: normal; color: inherit; }
 
-  /* ---------- WELCOME — text + vertical photo column ---------- */
   .welcome {
     display: grid;
     grid-template-columns: 1fr 0.85fr;
@@ -604,7 +589,7 @@
     grid-template-rows: 240px 360px;
     gap: 12px;
   }
-  /* class1 panoramic — spans full width */
+  
   .welcome__visual-frame:first-child {
     grid-column: 1 / -1;
   }
@@ -614,18 +599,18 @@
     overflow: hidden;
     box-shadow: 0 24px 60px rgba(10, 31, 61, 0.12);
   }
-  /* Default: object-fit cover for landscape images — stable for landscape frames */
+  
   .welcome__visual-frame img {
     width: 100%; height: 100%;
     object-fit: cover;
     object-position: center center;
     display: block;
   }
-  /* Panoramic (class1) — anchor slightly below center to show action */
+  
   .welcome__visual-frame:first-child img {
     object-position: center 40%;
   }
-  /* Barre portrait (class3) — cover fill, anchor left so barre/dancers stay in frame */
+  
   .welcome__visual-frame:nth-child(2) img {
     object-position: center center;
   }
@@ -680,8 +665,6 @@
     font-weight: 500;
   }
 
-  /* ---------- PHOTO SHOWCASE — rotating + vertical-column duo ---------- */
-  /* ---------- PHOTOSHOOT GALLERY ---------- */
   .section-break {
     width: 80px;
     height: 1px;
@@ -697,7 +680,7 @@
   .photoshoot-gallery--tight {
     padding-bottom: 24px;
   }
-  /* Row 1: 2 landscape images side by side */
+  
   .gallery-landscape-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -705,7 +688,7 @@
     height: 320px;
     margin-bottom: 10px;
   }
-  /* Row 2: 4 portrait images — staggered, even frames get black cap to align tops */
+  
   .gallery-portrait-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -716,7 +699,7 @@
   .gallery-portrait-row .gallery-frame {
     height: 100%;
   }
-  /* Even frames: black cap at top so all 4 tops align visually */
+  
   .gallery-portrait-row .gallery-frame:nth-child(even) {
     padding-top: 40px;
     background: #0d0d0d;
@@ -737,7 +720,6 @@
   }
   .gallery-frame:hover img { transform: scale(1.04); }
 
-  /* ---------- DISCIPLINES ---------- */
   .disciplines {
     background: var(--navy-deep);
     color: var(--pearl);
@@ -855,7 +837,6 @@
     border-radius: 50%;
   }
 
-  /* ---------- TRUST / STATS ---------- */
   .trust {
     background: var(--pearl);
     text-align: center;
@@ -969,7 +950,6 @@
     font-weight: 500;
   }
 
-  /* ---------- TESTIMONIALS — w/ rotating side photo ---------- */
   .testimonials {
     background: var(--mist);
     overflow: hidden;
@@ -1002,7 +982,7 @@
     height: 100%;
     box-shadow: none;
   }
-  /* ---------- PHOTO ROTATOR / CAROUSEL ---------- */
+  
   .photo-rotator {
     position: relative;
     width: 100%;
@@ -1025,7 +1005,7 @@
     border-radius: 0;
     min-height: 0;
   }
-  /* Invisible clickable edge zones — click left/right edge to advance */
+  
   .photo-rotator__arrow {
     position: absolute; top: 0; bottom: 0;
     width: 30%;
@@ -1178,7 +1158,6 @@
     font-weight: 500;
   }
 
-  /* ---------- CTA BANNER ---------- */
   .cta-banner {
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
     color: var(--pearl);
@@ -1248,7 +1227,6 @@
     border-color: var(--pearl);
   }
 
-  /* ---------- MODAL ---------- */
   .modal-overlay {
     position: fixed; inset: 0;
     background: rgba(10, 31, 61, 0.55);
@@ -1372,7 +1350,6 @@
     .form-row--two { grid-template-columns: 1fr; }
   }
 
-  /* ---------- FOOTER ---------- */
   footer {
     background: var(--navy-deep);
     color: var(--sky);
@@ -1454,12 +1431,6 @@
     50% { opacity: 0.5; transform: scale(1.4); }
   }
 
-  /* The hero's two-column composition is tuned precisely for full desktop
-     width — the badge/chip offsets are fixed px values. Rather than let that
-     composition get squeezed and shift as the window narrows, it jumps to
-     the stacked mobile layout early (1100px), well before the general
-     968px breakpoint, so it's always either "full desktop" or "stacked" —
-     never caught in between. */
   @media (max-width: 1100px) {
     .hero {
       grid-template-columns: 1fr;
@@ -1496,7 +1467,7 @@
       padding: 116px 20px 40px;
       gap: 36px;
     }
-    /* Hero CTAs on mobile: placement on its own line, register + schedule share a line */
+    
     .hero__content .hero__ctas { flex-wrap: wrap; gap: 10px; }
     .hero__content .hero__ctas .btn {
       flex: 1 1 calc(50% - 5px);
@@ -1509,9 +1480,9 @@
     .welcome__visual { position: relative; top: 0; grid-template-rows: 180px 260px; }
     .photoshoot-gallery { padding: 40px 20px; }
     .gallery-landscape-row { height: 200px; }
-    /* Fix ps5 contain on mobile — just cover, no black bars */
+    
     .gallery-landscape-row .gallery-frame:nth-child(2) img { object-fit: cover; background: none; }
-    /* Portrait row: 2-col grid, all frames same height, reset desktop stagger */
+    
     .gallery-portrait-row { grid-template-columns: 1fr 1fr; height: auto; align-items: stretch; }
     .gallery-portrait-row .gallery-frame { height: 280px; }
     .gallery-portrait-row .gallery-frame:nth-child(even) {

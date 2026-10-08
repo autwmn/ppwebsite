@@ -45,7 +45,6 @@
 
   img { max-width: 100%; display: block; }
 
-  /* ---------- LOGO ---------- */
   .logo-mark {
     display: inline-block;
     text-decoration: none;
@@ -63,7 +62,6 @@
   .footer .logo-img { height: 52px; }
   footer .logo-img { width: 340px; max-width: 100%; height: auto; }
 
-  /* ---------- NAV ---------- */
   .nav {
     position: fixed; top: 0; left: 0; right: 0;
     z-index: 100;
@@ -190,7 +188,6 @@
   }
   .nav__cta::after { display: none; }
 
-  /* ---------- BUTTONS ---------- */
   .btn {
     display: inline-flex; align-items: center; gap: 12px;
     padding: 18px 32px;
@@ -227,7 +224,6 @@
   .btn .arrow { transition: transform 0.3s; }
   .btn:hover .arrow { transform: translateX(4px); }
 
-  /* ---------- PHOTO SLOT ---------- */
   .photo-slot {
     position: relative;
     background: linear-gradient(135deg, var(--sky), var(--blue-soft));
@@ -272,7 +268,6 @@
     font-weight: 500;
   }
 
-  /* ---------- STAFF PHOTOS ---------- */
   .teacher-card__photo {
     aspect-ratio: 3 / 4;
   }
@@ -298,7 +293,7 @@
     object-position: top center;
     display: block;
   }
-  /* Text-only desk card (no photo) */
+  
   .desk-card--text-only {
     display: flex;
     align-items: center;
@@ -310,13 +305,13 @@
     padding: 0;
     max-width: 360px;
   }
-  /* Front desk 2-up row */
+  
   .front-desk__row-two {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-  /* Denise row — centered single card */
+  
   .front-desk__row-one {
     display: flex;
     justify-content: center;
@@ -325,7 +320,6 @@
     width: 100%;
   }
 
-  /* ---------- SECTION SHARED ---------- */
   section { padding: 80px 40px; position: relative; }
   .section-eyebrow {
     font-size: 12px;
@@ -347,7 +341,6 @@
   }
   .section-title em { font-style: italic; color: var(--blue); }
 
-  /* ---------- PAGE HERO ---------- */
   .page-hero {
     padding: 136px 56px 100px;
     text-align: center;
@@ -421,7 +414,6 @@
     animation: fadeUp 1s ease 0.5s forwards;
   }
 
-  /* ---------- OWNER SECTION ---------- */
   .owner {
     background: white;
     padding: 80px 40px;
@@ -550,7 +542,6 @@
     line-height: 1.4;
   }
 
-  /* ---------- TEACHERS SECTION ---------- */
   .teachers {
     background: var(--pearl);
     padding: 80px 40px;
@@ -644,7 +635,6 @@
     font-weight: 300;
   }
 
-  /* ---------- FRONT DESK SECTION ---------- */
   .front-desk {
     background: var(--navy-deep);
     padding: 80px 40px;
@@ -766,7 +756,6 @@
     font-weight: 300;
   }
 
-  /* ---------- CTA BANNER ---------- */
   .cta-banner {
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--blue) 100%);
     color: var(--pearl);
@@ -836,7 +825,6 @@
     border-color: var(--pearl);
   }
 
-  /* ---------- MODAL ---------- */
   .modal-overlay {
     position: fixed; inset: 0;
     background: rgba(10, 31, 61, 0.55);
@@ -960,7 +948,6 @@
     .form-row--two { grid-template-columns: 1fr; }
   }
 
-  /* ---------- FOOTER ---------- */
   footer {
     background: var(--navy-deep);
     color: var(--sky);
@@ -1028,7 +1015,6 @@
     letter-spacing: 0.02em;
   }
 
-  /* ---------- KEYFRAMES ---------- */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
@@ -1043,7 +1029,6 @@
     50% { opacity: 0.5; transform: scale(1.4); }
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 968px) {
     .nav { padding: 14px 20px; }
     .nav .logo-img { height: 46px; }
